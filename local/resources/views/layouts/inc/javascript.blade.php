@@ -1,5 +1,5 @@
 <footer class="main-footer">
-    <a href="#" target="_blank"><img src="{{ asset('assets/img/ico_facebook.png',env('URL_SSL')) }}" alt="Facebook"></a>
+    <a href="#" target="_blank" class="twitterbird"></a>
 </footer>
 <div style="display:none;">
     <!-- popup loading-->
