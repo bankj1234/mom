@@ -6,62 +6,78 @@
         <div class="container txtC">
             <div class="row">
                 <section class="section-select" id="step_1">
+                    <h2 class="section-title ">1 : เลือกรถ</h2>
+                    <figure class="box-mdf-img">
+                        <div class="box-img-space">
+                            <a class="btn-step-select" href="javascript:void(0);">
+                                <span class="mdf-img"><span class="img"></span></span>
+                                <span class="btnSty1"><span>เลือก MSX คันนี้</span></span>
+                            </a>
+                            <img class="img_w" src="{{ asset('assets/img/img_space.png',env('URL_SSL')) }}" alt="">
+                        </div>
+                    </figure>
+                    <div class="select-bike">
+                        <?php for ($i=1; $i <= 15; $i++) { ?>
+                        <a class="item" href="javascript:void(0);" rel="<?php echo $i; ?>"><img src="{{ asset('assets/img/bike',env('URL_SSL')) }}/MSX_picture-Bike_<?php echo $i; ?>.png" alt=""/></a>
+                        <?php } ?>
+                    </div>
+                </section>
+                <section class="section-select-browse" id="step_2">
+                    <h2 class="section-title ">2 : เลือกรูป</h2>
                     <figure class="box-mdf-img" id="preview-img">
-                        <div class="box-img-space" style="display: none;">
+                        <div class="box-img-space">
                             <div class="mdf-img">
+                                <div class="img"></div>
                                 <div class="img-browse">
                                     <img id="image" src="" alt="">
+                                    <div class="box-webcam hidden-xs">
+                                        <video id="video" width="480" height="360" autoplay></video>
+                                        <canvas id="video_snap" width="480" height="480" style="display:none;"></canvas>
+                                    </div>
                                 </div>
                                 <div class="img-finish"></div>
                             </div>
-                            <img class="img_w" src="{{ asset('assets/img/img_space2.png',env('URL_SSL')) }}" alt="">
+                            <img class="img_w" src="{{ asset('assets/img/img_space.png',env('URL_SSL')) }}" alt="">
                         </div>
-                        <div class="box-btn box-btn-browse">
+                    </figure>
+                    <div class="box-btn box-btn-browse">
 						<span class="btn-browse btn-img-txt">
 							<input type="file" id="import_image" accept="image/*"/>
-							<span class="img"><img src="{{ asset('assets/img/btn-new-upload.png',env('URL_SSL')) }}" alt=""></span>
+							<span class="img"><img src="{{ asset('assets/img/ico_file.svg',env('URL_SSL')) }}" alt=""></span>
+							<span class="txt">เลือกรูป</span>
 						</span>
-                        </div>
-                        <div class="btn-edit-img">
-                            <h3>ซูม</h3>
-                            <input class="input-slider" type="range" id="zoom" min='0' max='2' step='0.1'/>
-                            <h3>หมุน</h3>
-                            <input class="input-slider" type="range" id="rotate" min='-45' max='45' step='1'/>
-                        </div>
-                    </figure>
-                    <figure class="box-mdf-img">
-                        <div class="text-2">
-                            <div class="col-10"></div>
-                                <div class="col-80"><img class="img-text" src="{{ asset('assets/img/text2.png') }}" alt=""></div>
-                            <div class="col-10"></div>
-                        </div>
-                        <div class="input-box">
-                            <div class="col-10"></div>
-                            <div class="col-80"><input class="input-msg" type="text" value="" name="input-msg"></div>
-                            <div class="col-10"></div>
-                        </div>
-                    </figure>
-                    <div class="text-3">
-                        <div class="col-10"></div>
-                        <div class="col-80"><img class="img-text" src="{{ asset('assets/img/text3.png') }}" alt=""></div>
-                        <div class="col-10"></div>
-                    </div>
-                    <div class="select-bike">
-                        <?php for ($i=1; $i <= 5; $i++) { ?>
-                        <a class="item" href="javascript:void(0);" rel="<?php echo $i; ?>"><img src="{{ asset('assets/img/frame',env('URL_SSL')) }}/frame<?php echo $i; ?>.png" alt=""/></a>
-                        <?php } ?>
                     </div>
                     <div class="btn-edit-img">
+                        <h3>ซูม</h3>
+                        <input class="input-slider" type="range" id="zoom" min='0' max='2' step='0.1'/>
+                        <h3>หมุน</h3>
+                        <input class="input-slider" type="range" id="rotate" min='-45' max='45' step='1'/>
                         <div class="box-btn">
-                            <button class="btnSty1" onclick="finish();"><span>เสร็จสิ้น</span></button>
+                            <button class="btnSty1" onclick="finish();"><span>FIN</span></button>
                         </div>
+                    </div>
+                    <div class="box-btn btn-finish-img">
+                        <a class="btn-save btn-img-txt" href="#" target="_blank">
+                            <span class="img"><img src="{{ asset('assets/img/ico_save.svg',env('URL_SSL')) }}" alt=""></span>
+                            <span class="txt">บันทึก</span>
+                        </a>
+                        <a class="btn-share btn-img-txt" href="#">
+                            <span class="img"><img src="{{ asset('assets/img/ico_share.svg',env('URL_SSL')) }}" alt=""></span>
+                            <span class="txt">แชร์</span>
+                        </a>
+                        <a class="btn-play-again btn-img-txt" onclick="location.reload();" href="javascript:void(0);">
+                            <span class="img"><img src="{{ asset('assets/img/ico_play-again.svg',env('URL_SSL')) }}" alt=""></span>
+                            <span class="txt">เล่นอีกครั้ง</span>
+                        </a>
+                    </div>
+                    <div class="btn-snap-webcam box-btn">
+                        <button id="snap_webcam" class="btnSty1"><span>FIN</span></button>
                     </div>
                 </section>
             </div>
         </div>
         <div class="crop-result"></div>
         <canvas id="result-canvas" width="600" height="600" style="display:none;"></canvas>
-
     </div>
 @endsection
 @section('javascript')
@@ -132,15 +148,16 @@
                 image.style_path = $(this).html();
                 $('.select-bike .item').removeClass('active');
                 $(this).addClass('active');
-                //console.log(image.style_path);
-                //$('.mdf-img .img').html(image.style_path);
+                $('.mdf-img .img').html(image.style_path);
             });
+            webcam_init();
             step_init();
         }
         function step_init(){
             $('#step_2').hide();
             btn_edit_img_hide();
             btn_finish_img_hide();
+            btn_snap_webcam_hide();
         }
         /* select bike */
         function step_1(){
@@ -155,7 +172,7 @@
         function step_3(){
             $('.box-btn-browse').hide();
             btn_edit_img_show();
-
+            $('.section-select-browse .section-title').html('3 : ปรับแต่งรูป');
         }
         /* finish img */
         function step_4(){
@@ -163,6 +180,7 @@
             $('.section-select-browse .section-title').html('แชร์...สไตล์คุณ');
             btn_edit_img_hide();
             btn_finish_img_show();
+            btn_snap_webcam_hide();
         }
         function btn_edit_img_show(){
             $('.btn-edit-img').show();
@@ -176,7 +194,12 @@
         function btn_finish_img_hide(){
             $('.btn-finish-img').hide();
         }
-
+        function btn_snap_webcam_show(){
+            $('.btn-snap-webcam').show();
+        }
+        function btn_snap_webcam_hide(){
+            $('.btn-snap-webcam').hide();
+        }
         function fn_save_img(){}
         function fn_share_img(){}
 
@@ -194,6 +217,7 @@
                 ready:function(){
                     image.el.cropper("setCropBoxData", { left: 0, top: 0, width: 480, height: 480 });
                     $('.cropper-drag-box').addClass('sty-'+image.style_index);
+                    $('.section-select-browse .section-title').html('3 : ปรับแต่งรูป');
                 }
             });
         }
@@ -231,9 +255,8 @@
                 reader.onload = function (e) {
                     $('.section-select-browse .box-mdf-img .img').hide();
                     $('.section-select-browse .box-mdf-img .img-browse').addClass('show');
-                    //$('.img-browse').addClass('sty-'+image.style_index);
+                    $('.img-browse').addClass('sty-'+image.style_index);
                     $('#image').attr('src',e.target.result);
-                    $('.box-img-space').show();
                     step_3();
                     crop_init();
                 }
@@ -242,7 +265,38 @@
 
             }
         }
-
+        function webcam_init(){
+            var video = document.getElementById('video');
+            var canvas_webcam = document.getElementById('video_snap');
+            var ctx = canvas_webcam.getContext('2d');
+            $('.box-webcam').hide();
+            $('.btn-webcam').click(function(){
+                // Get access to the camera!
+                if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+                    // Not adding `{ audio: true }` since we only want video now
+                    navigator.mediaDevices.getUserMedia({ video: true }).then(function(stream) {
+                        video.src = window.URL.createObjectURL(stream);
+                        video.play();
+                    });
+                }
+                $('.box-btn-browse').hide();
+                $('.box-webcam,.btn-snap-webcam').show();
+                $('.section-select-browse .box-mdf-img .img-browse').addClass('show');
+                $('.section-select-browse .section-title').html('2 : ถ่ายรูป');
+            });
+            // Trigger photo take & mock-up
+            document.getElementById("snap_webcam").addEventListener("click", function() {
+                ctx.clearRect(0, 0, canvas_webcam.width, canvas_webcam.height);
+                ctx.translate(canvas_webcam.width, 0);
+                ctx.scale(-1, 1);
+                ctx.drawImage(video, 0, 0, image.width, 360);
+                $('#image').attr('src',canvas_webcam.toDataURL());
+                ctx.setTransform(1,0,0,1,0,0);
+                $('.section-select-browse .box-webcam,#snap_webcam').hide();
+                $('.section-select-browse .box-mdf-img .img-browse').addClass('show');
+                uploadFile(canvas_webcam.toDataURL());
+            });
+        }
         function shareImage(img,task) {
             var id = "@if(env('APP_ENV') == 'prod'){{ secure_url('') }}@else{{ url('') }}@endif";
             var img = img;

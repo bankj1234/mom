@@ -1,87 +1,64 @@
 /* Mixin Media Queries
 ================================================== */
-
-@font-face {
-    font-family: 'KittithadaMedium65Italic';
-    src: url('fonts/KittithadaMedium65Italic.eot?#iefix') format('embedded-opentype'),
-    url('fonts/KittithadaMedium65Italic.woff') format('woff'), url('fonts/KittithadaMedium65Italic.ttf') format('truetype'), url('fonts/KittithadaMedium65Italic.svg#KittithadaMedium65Italic') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'KittithadaThin35Italic';
-    src: url('fonts/KittithadaThin35Italic.eot?#iefix') format('embedded-opentype'),
-    url('fonts/KittithadaThin35Italic.woff') format('woff'), url('fonts/KittithadaThin35Italic.ttf') format('truetype'), url('fonts/KittithadaThin35Italic.svg#KittithadaThin35Italic') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
 @font-face {
     font-family: 'KittithadaBold75';
-    src: url('fonts/KittithadaBold75.eot?#iefix') format('embedded-opentype'),
-    url('fonts/KittithadaBold75.woff') format('woff'), url('fonts/KittithadaBold75.ttf') format('truetype'), url('fonts/KittithadaBold75.svg#KittithadaBold75') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'KittithadaMedium65';
-    src: url('fonts/KittithadaMedium65.eot?#iefix') format('embedded-opentype'),
-    url('fonts/KittithadaMedium65.woff') format('woff'), url('fonts/KittithadaMedium65.ttf') format('truetype'), url('fonts/KittithadaMedium65.svg#KittithadaMedium65') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'KittithadaRoman55Italic';
-    src: url('fonts/KittithadaRoman55Italic.eot?#iefix') format('embedded-opentype'),
-    url('fonts/KittithadaRoman55Italic.woff') format('woff'), url('fonts/KittithadaRoman55Italic.ttf') format('truetype'), url('fonts/KittithadaRoman55Italic.svg#KittithadaRoman55Italic') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'KittithadaRoman55';
-    src: url('fonts/KittithadaRoman55.eot?#iefix') format('embedded-opentype'),
-    url('fonts/KittithadaRoman55.woff') format('woff'), url('fonts/KittithadaRoman55.ttf') format('truetype'), url('fonts/KittithadaRoman55.svg#KittithadaRoman55') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'KittithadaLight45';
-    src: url('fonts/KittithadaLight45.eot?#iefix') format('embedded-opentype'),
-    url('fonts/KittithadaLight45.woff') format('woff'), url('fonts/KittithadaLight45.ttf') format('truetype'), url('fonts/KittithadaLight45.svg#KittithadaLight45') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'KittithadaLight45Italic';
-    src: url('fonts/KittithadaLight45Italic.eot?#iefix') format('embedded-opentype'),
-    url('fonts/KittithadaLight45Italic.woff') format('woff'), url('fonts/KittithadaLight45Italic.ttf') format('truetype'), url('fonts/KittithadaLight45Italic.svg#KittithadaLight45Italic') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'KittithadaThin35';
-    src: url('fonts/KittithadaThin35.eot?#iefix') format('embedded-opentype'),
-    url('fonts/KittithadaThin35.woff') format('woff'), url('fonts/KittithadaThin35.ttf') format('truetype'), url('fonts/KittithadaThin35.svg#KittithadaThin35') format('svg');
-    font-weight: normal;
-    font-style: normal;
+    src: url("fonts/Kittithada/KittithadaBold75.eot");
+    src: url("fonts/Kittithada/KittithadaBold75.eot") format("embedded-opentype"), url("fonts/Kittithada/KittithadaBold75.woff") format("woff"), url("fonts/Kittithada/KittithadaBold75.ttf") format("truetype");
 }
 
 @font-face {
     font-family: 'KittithadaBold75Italic';
-    src: url('fonts/KittithadaBold75Italic.eot?#iefix') format('embedded-opentype'),
-    url('fonts/KittithadaBold75Italic.woff') format('woff'), url('fonts/KittithadaBold75Italic.ttf') format('truetype'), url('fonts/KittithadaBold75Italic.svg#KittithadaBold75Italic') format('svg');
-    font-weight: normal;
-    font-style: normal;
+    src: url("fonts/Kittithada/KittithadaBold75Italic.eot");
+    src: url("fonts/Kittithada/KittithadaBold75Italic.eot") format("embedded-opentype"), url("fonts/Kittithada/KittithadaBold75Italic.woff") format("woff"), url("fonts/Kittithada/KittithadaBold75Italic.ttf") format("truetype");
 }
 
+@font-face {
+    font-family: 'KittithadaLight45';
+    src: url("fonts/Kittithada/KittithadaLight45.eot");
+    src: url("fonts/Kittithada/KittithadaLight45.eot") format("embedded-opentype"), url("fonts/Kittithada/KittithadaLight45.woff") format("woff"), url("fonts/Kittithada/KittithadaLight45.ttf") format("truetype");
+}
 
+@font-face {
+    font-family: 'KittithadaLight45Italic';
+    src: url("fonts/Kittithada/KittithadaLight45Italic.eot");
+    src: url("fonts/Kittithada/KittithadaLight45Italic.eot") format("embedded-opentype"), url("fonts/Kittithada/KittithadaLight45Italic.woff") format("woff"), url("fonts/Kittithada/KittithadaLight45Italic.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'KittithadaMedium65';
+    src: url("fonts/Kittithada/KittithadaMedium65.eot");
+    src: url("fonts/Kittithada/KittithadaMedium65.eot") format("embedded-opentype"), url("fonts/Kittithada/KittithadaMedium65.woff") format("woff"), url("fonts/Kittithada/KittithadaMedium65.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'KittithadaMedium65Italic';
+    src: url("fonts/Kittithada/KittithadaMedium65Italic.eot");
+    src: url("fonts/Kittithada/KittithadaMedium65Italic.eot") format("embedded-opentype"), url("fonts/Kittithada/KittithadaMedium65Italic.woff") format("woff"), url("fonts/Kittithada/KittithadaMedium65Italic.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'KittithadaRoman55';
+    src: url("fonts/Kittithada/KittithadaRoman55.eot");
+    src: url("fonts/Kittithada/KittithadaRoman55.eot") format("embedded-opentype"), url("fonts/Kittithada/KittithadaRoman55.woff") format("woff"), url("fonts/Kittithada/KittithadaRoman55.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'KittithadaRoman55Italic';
+    src: url("fonts/Kittithada/KittithadaRoman55Italic.eot");
+    src: url("fonts/Kittithada/KittithadaRoman55Italic.eot") format("embedded-opentype"), url("fonts/Kittithada/KittithadaRoman55Italic.woff") format("woff"), url("fonts/Kittithada/KittithadaRoman55Italic.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'KittithadaThin35';
+    src: url("fonts/Kittithada/KittithadaThin35.eot");
+    src: url("fonts/Kittithada/KittithadaThin35.eot") format("embedded-opentype"), url("fonts/Kittithada/KittithadaThin35.woff") format("woff"), url("fonts/Kittithada/KittithadaThin35.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'KittithadaThin35Italic';
+    src: url("fonts/Kittithada/KittithadaThin35Italic.eot");
+    src: url("fonts/Kittithada/KittithadaThin35Italic.eot") format("embedded-opentype"), url("fonts/Kittithada/KittithadaThin35Italic.woff") format("woff"), url("fonts/Kittithada/KittithadaThin35Italic.ttf") format("truetype");
+}
 /*
 SHARE CSS ====================================== */
 *, *:focus {
@@ -225,7 +202,7 @@ img {
 }
 
 .btnSty1 span {
-    font: 400 36px/1 "Kittithada Bold 75";
+    font: 400 36px/1 "KittithadaBold75";
     position: relative;
     z-index: 2;
     color: #fff;
@@ -256,11 +233,11 @@ img {
 LAYOUT CSS ====================================== */
 html, body {
     min-height: 100vh;
-    background-color: #ffffff;
+    background-color: #000000;
 }
 
 body {
-    font-family: 'KittithadaMedium65' !important;
+    font-family: "KittithadaBold75";
     color: #000000;
     line-height: 1.4;
     -webkit-font-smoothing: antialiased;
@@ -457,7 +434,7 @@ figure {
 }
 
 .main-header .main-nav a {
-    font: 400 36px/1 "Kittithada Light 45";
+    font: 400 36px/1 "KittithadaBold75";
     color: #fff;
     text-decoration: none;
     text-align: center;
@@ -467,7 +444,7 @@ figure {
 }
 
 .main-header .main-nav a:hover {
-    font-family: "Kittithada Bold 75";
+    color: #EA2227;
 }
 
 @media only screen and (max-width: 767px) {
@@ -547,7 +524,7 @@ figure {
 }
 
 .intro {
-    font: 400 26px/1.2 "KittithadaMedium65";
+    font: 400 26px/1.2 "KittithadaBold75";
     margin: 20px 0;
 }
 
@@ -748,7 +725,7 @@ figure {
 }
 
 .btn-img-txt .txt {
-    font: 400 24px "KittithadaMedium65Italic";
+    font: 400 24px "KittithadaBold75";
     color: #fff;
 }
 
@@ -757,7 +734,7 @@ figure {
 }
 
 [class^="section-title"] {
-    font: 400 36px/1 "KittithadaMedium65Italic";
+    font: 400 36px/1 "KittithadaBold75";
     text-align: left;
     padding-left: 15px;
     position: relative;
@@ -904,14 +881,13 @@ figure {
     display: block;
     width: 100%;
     height: 2px;
-    /*-webkit-appearance: none;*/
+    -webkit-appearance: none;
     cursor: pointer;
-    background-color:#004f94 ;
 }
 
 .btn-edit-img h3 {
-    font: 400 24px "KittithadaMedium65";
-    color: #004f94;
+    font: 400 24px "KittithadaBold75";
+    color: #fff;
     margin: 10px 0 5px 0;
 }
 
@@ -1074,7 +1050,7 @@ figure {
 }
 
 .btn-load-more {
-    font: 400 24px/1 "KittithadaMedium65Italic";
+    font: 400 24px/1 "KittithadaBold75";
     color: #fff;
     border-bottom: 1px solid #fff;
     text-decoration: none;
@@ -1084,7 +1060,7 @@ figure {
 
 .fancybox-title {
     background: url("../img/bg_fb.png") left top no-repeat #fff;
-    font: 400 24px "KittithadaMedium65Italic" !important;
+    font: 400 24px "KittithadaBold75" !important;
     padding: 4px 10px 0 65px;
     height: 35px;
     box-sizing: border-box;
@@ -1290,19 +1266,18 @@ Loading CSS ====================================== */
     min-height: 1px;
 }
 .text-2{
-    height: 50px;
+    margin-bottom: 20px;
 }
 .text-2 .img-text{
     margin:0 auto 0;
 }
 .text-3{
-    height: 60px;
+    margin-bottom: 20px;
 }
 .text-3 .img-text{
     margin:0 auto 0;
 }
 .input-msg{
-    font-family: KittithadaLight45;
     font-size: 4em;
     text-align: center;
     color:#07bff4;

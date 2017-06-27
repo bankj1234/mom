@@ -10,7 +10,6 @@
         <div class="container">
                 <a href="{{url('')}}">หน้าแรก</a>
                 <a href="{{url('activity')}}">เริ่มเล่น</a>
-                <a href="{{url('gallery')}}">อัลบั้มบอกรักแม่</a>
                 <a href="{{url('how-to-play')}}">วิธีการร่วมกิจกรรม</a>
                 <a href="{{url('terms-of-use')}}">Privacy Policy</a>
         </div>

@@ -7,19 +7,20 @@
             <div class="row">
                 <section class="section-select" id="step_1">
                     <figure class="box-mdf-img" id="preview-img">
-                        <div class="box-img-space" style="display: none;">
+                        <div class="box-img-space">
                             <div class="mdf-img">
                                 <div class="img-browse">
                                     <img id="image" src="" alt="">
                                 </div>
                                 <div class="img-finish"></div>
                             </div>
-                            <img class="img_w" src="{{ asset('assets/img/img_space2.png',env('URL_SSL')) }}" alt="">
+                            <img class="img_w" src="{{ asset('assets/img/img_space.png',env('URL_SSL')) }}" alt="">
                         </div>
                         <div class="box-btn box-btn-browse">
 						<span class="btn-browse btn-img-txt">
 							<input type="file" id="import_image" accept="image/*"/>
-							<span class="img"><img src="{{ asset('assets/img/btn-new-upload.png',env('URL_SSL')) }}" alt=""></span>
+							<span class="img"><img src="{{ asset('assets/img/ico_file.svg',env('URL_SSL')) }}" alt=""></span>
+							<span class="txt">เลือกรูป</span>
 						</span>
                         </div>
                         <div class="btn-edit-img">
@@ -28,12 +29,24 @@
                             <h3>หมุน</h3>
                             <input class="input-slider" type="range" id="rotate" min='-45' max='45' step='1'/>
                         </div>
+                        <div class="box-btn btn-finish-img">
+                            <a class="btn-save btn-img-txt" href="#" target="_blank">
+                                <span class="img"><img src="{{ asset('assets/img/ico_save.svg',env('URL_SSL')) }}" alt=""></span>
+                                <span class="txt">บันทึก</span>
+                            </a>
+                            <a class="btn-share btn-img-txt" href="#">
+                                <span class="img"><img src="{{ asset('assets/img/ico_share.svg',env('URL_SSL')) }}" alt=""></span>
+                                <span class="txt">แชร์</span>
+                            </a>
+                            <a class="btn-play-again btn-img-txt" onclick="location.reload();" href="javascript:void(0);">
+                                <span class="img"><img src="{{ asset('assets/img/ico_play-again.svg',env('URL_SSL')) }}" alt=""></span>
+                                <span class="txt">เล่นอีกครั้ง</span>
+                            </a>
+                        </div>
                     </figure>
                     <figure class="box-mdf-img">
                         <div class="text-2">
-                            <div class="col-10"></div>
-                                <div class="col-80"><img class="img-text" src="{{ asset('assets/img/text2.png') }}" alt=""></div>
-                            <div class="col-10"></div>
+                            <img class="img-text" src="{{ asset('assets/img/text2.png') }}" alt="">
                         </div>
                         <div class="input-box">
                             <div class="col-10"></div>
@@ -42,9 +55,7 @@
                         </div>
                     </figure>
                     <div class="text-3">
-                        <div class="col-10"></div>
-                        <div class="col-80"><img class="img-text" src="{{ asset('assets/img/text3.png') }}" alt=""></div>
-                        <div class="col-10"></div>
+                        <img class="img-text" src="{{ asset('assets/img/text3.png') }}" alt="">
                     </div>
                     <div class="select-bike">
                         <?php for ($i=1; $i <= 5; $i++) { ?>
@@ -52,9 +63,9 @@
                         <?php } ?>
                     </div>
                     <div class="btn-edit-img">
-                        <div class="box-btn">
-                            <button class="btnSty1" onclick="finish();"><span>เสร็จสิ้น</span></button>
-                        </div>
+                    <div class="box-btn">
+                        <button class="btnSty1" onclick="finish();"><span>เสร็จสิ้น</span></button>
+                    </div>
                     </div>
                 </section>
             </div>
@@ -233,7 +244,6 @@
                     $('.section-select-browse .box-mdf-img .img-browse').addClass('show');
                     //$('.img-browse').addClass('sty-'+image.style_index);
                     $('#image').attr('src',e.target.result);
-                    $('.box-img-space').show();
                     step_3();
                     crop_init();
                 }

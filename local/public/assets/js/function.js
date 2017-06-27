@@ -68,5 +68,5 @@ function popup_loading(){
 	});
 }
 function GA_select_style(num){
-	ga('send','event','Style select','Style '+ num +'');
+	//ga('send','event','Style select','Style '+ num +'');
 }

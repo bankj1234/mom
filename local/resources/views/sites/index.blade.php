@@ -15,7 +15,7 @@
             <div class="col-10"></div>
             <div class="col-35"><a class="btn-landing-howto" href=""></a></div>
             <div class="col-10"></div>
-            <a href="" class="btn-start"></a>
+            <a href="{{ url('activity') }}" class="btn-start"></a>
         </div>
 
 
