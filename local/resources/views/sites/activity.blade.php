@@ -57,6 +57,22 @@
                         </div>
                     </div>
                 </section>
+                <section class="section-select" id="step_2">
+                    <div class="box-btn btn-finish-img">
+                        <a class="btn-save btn-img-txt" href="#" target="_blank">
+                            <span class="img"><img src="{{ asset('assets/img/ico_save.svg',env('URL_SSL')) }}" alt=""></span>
+                            <span class="txt">บันทึก</span>
+                        </a>
+                        <a class="btn-share btn-img-txt" href="#">
+                            <span class="img"><img src="{{ asset('assets/img/ico_share.svg',env('URL_SSL')) }}" alt=""></span>
+                            <span class="txt">แชร์</span>
+                        </a>
+                        <a class="btn-play-again btn-img-txt" onclick="location.reload();" href="javascript:void(0);">
+                            <span class="img"><img src="{{ asset('assets/img/ico_play-again.svg',env('URL_SSL')) }}" alt=""></span>
+                            <span class="txt">เล่นอีกครั้ง</span>
+                        </a>
+                    </div>
+                </section>
             </div>
         </div>
         <div class="crop-result"></div>
@@ -73,7 +89,6 @@
         image.width = 480;
         image.size = 600;
         image.style_index = 1;
-        image.style_path = "<img src='{{ asset('assets/img/bike/MSX_picture-Bike_1.png',env('URL_SSL')) }}'/>";
 
         $(document).ready(function(){
 
@@ -203,27 +218,28 @@
             uploadFile(canvas_crop_data);
         }
         function uploadFile(dataURL) {
-            popup_loading();
-            var task = image.style_index;
-            var token = "{{ csrf_token() }}";
-            $.ajax({
-                type: "POST",
-                url: "@if(env('APP_ENV') == 'prod'){{ secure_url('image/upload') }}@else{{ url('image/upload') }}@endif",
-                data: {
-                    'image': dataURL,
-                    "_token": token,
-                    'frame': image.style_index
-                }
-            }).done(function (data) {
-                step_4();
-                $('.img-finish').html('<img src="' + $.parseJSON(data).fullpath + '"/>');
-                $('.btn-save').attr('href', '' + $.parseJSON(data).fullpath + '');
-                $('.btn-share').click(function (event) {
-                    console.log(task);
-                    shareImage($.parseJSON(data).fullpathshare,task);
-                });
-                $.fancybox.close();
-            });
+            step_2();
+            {{--popup_loading();--}}
+            {{--var task = image.style_index;--}}
+            {{--var token = "{{ csrf_token() }}";--}}
+            {{--$.ajax({--}}
+                {{--type: "POST",--}}
+                {{--url: "@if(env('APP_ENV') == 'prod'){{ secure_url('image/upload') }}@else{{ url('image/upload') }}@endif",--}}
+                {{--data: {--}}
+                    {{--'image': dataURL,--}}
+                    {{--"_token": token,--}}
+                    {{--'frame': image.style_index--}}
+                {{--}--}}
+            {{--}).done(function (data) {--}}
+                {{--step_4();--}}
+                {{--$('.img-finish').html('<img src="' + $.parseJSON(data).fullpath + '"/>');--}}
+                {{--$('.btn-save').attr('href', '' + $.parseJSON(data).fullpath + '');--}}
+                {{--$('.btn-share').click(function (event) {--}}
+                    {{--console.log(task);--}}
+                    {{--shareImage($.parseJSON(data).fullpathshare,task);--}}
+                {{--});--}}
+                {{--$.fancybox.close();--}}
+            {{--});--}}
         }
         function readFile(input) {
             if (input.files && input.files[0]) {

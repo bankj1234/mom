@@ -13,6 +13,9 @@
 
 Route::get('/', 'SiteController@index');
 Route::get('activity', 'SiteController@activity');
+Route::get('how-to-play', 'SiteController@howtoplay');
+
+
 Route::get('home', 'HomeController@index');
 
 Route::controllers([

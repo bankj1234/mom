@@ -1,5 +1,5 @@
 <footer class="main-footer">
-    <a href="#" target="_blank" class="twitterbird"></a>
+    <a href="https://www.nestle.co.th/th/info/yourdata" target="_blank" class="twitterbird"></a>
 </footer>
 <div style="display:none;">
     <!-- popup loading-->

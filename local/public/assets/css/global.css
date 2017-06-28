@@ -536,7 +536,7 @@ figure {
 
 .hero-text {
     background-color: #fff;
-    max-width: 647px;
+    max-width: 602px;
     margin: 0px auto 20px
 }
 
@@ -813,7 +813,7 @@ figure {
 }
 
 .section-select .box-mdf-img .btnSty1 span {
-    background: url("../img/ico_next.png") 100% 40% no-repeat;
+    background: url("../img/ico_next-blue.png") 100% 40% no-repeat;
     background-size: 12px auto;
     font-size: 24px;
     padding-right: 20px;
@@ -872,13 +872,13 @@ figure {
 }
 
 .select-bike .owl-prev {
-    background: url("../img/ico_prev.png") 50% 50% no-repeat;
+    background: url("../img/ico_prev-blue.png") 50% 50% no-repeat;
     background-size: 16px auto;
     left: -20px;
 }
 
 .select-bike .owl-next {
-    background: url("../img/ico_next.png") 50% 50% no-repeat;
+    background: url("../img/ico_next-blue.png") 50% 50% no-repeat;
     background-size: 16px auto;
     right: -20px;
 }
@@ -952,7 +952,7 @@ figure {
     width: 100%;
     max-width: 350px;
     display: inline-block;
-    margin: 15px auto;
+    margin: 50px auto;
 }
 
 /* gallery */
@@ -1217,58 +1217,56 @@ Loading CSS ====================================== */
     height: auto;
 }
 
-.btn-landing-gallery {
-    float: left;
+.btn-landing-start {
     margin-top: 19px;
-    height: 155px;
+    height: 134px;
     display: inline-block;
-    max-width: 306px;
+    max-width: 444px;
     width: 100%;
-    background: transparent url('../img/btn_album.png') center top no-repeat;
+    background: transparent url('../img/btn-start.png') center top no-repeat;
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
 }
 
-.btn-landing-gallery:hover {
-    background-image: url('../img/btn_album_hover.png');
+.btn-landing-start:hover {
+    background-image: url('../img/btn-start-hover.png');
 }
 
 .btn-landing-howto {
-    float: right;
     margin-top: 19px;
-    height: 156px;
+    height: 134px;
     display: inline-block;
+    max-width: 444px;
     width: 100%;
-    background: transparent url('../img/btn_howto.png') center top no-repeat;
+    background: transparent url('../img/btn-hot-to.png') center top no-repeat;
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
 }
 
 .btn-landing-howto:hover {
-    background-image: url('../img/btn_howto_hover.png');
+    background-image: url('../img/btn-how-to-hover.png');
 }
-
-.btn-start {
-    float: inherit;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    height: 38px;
-    display: inline-block;
-    width: 100%;
-    background: transparent url('../img/btn_start.png') center top no-repeat;
+@media only screen and (max-width: 767px) {
+    .btn-landing-start {
+        height: 100px;
+        width: 60%;
+    }
 }
-
 @media only screen and (max-width: 767px) {
     .btn-landing-howto {
         height: 100px;
-    }
-
-    .btn-landing-gallery {
-        height: 100px;
+        width: 60%;
     }
 }
+
+@media only screen and (max-width: 	420px)  {
+    .btn-landing-howto {
+        margin-top:-20px;
+    }
+}
+
 
 .col-35 {
      width: 35%;
@@ -1279,6 +1277,18 @@ Loading CSS ====================================== */
 
 .col-10 {
     width: 10%;
+    float: left;
+    position: relative;
+    min-height: 1px;
+}
+.col-20 {
+    width: 20%;
+    float: left;
+    position: relative;
+    min-height: 1px;
+}
+.col-60 {
+    width: 60%;
     float: left;
     position: relative;
     min-height: 1px;
@@ -1316,7 +1326,33 @@ Loading CSS ====================================== */
     -moz-border-radius: 10px;
     border-radius: 10px;
 }
+@media only screen and (max-width: 	420px)  {
+    .input-msg{
+        height: 70px;
+    }
+}
 .input-box{
     height: 150px;
+}
+@media only screen and (max-width: 	420px)  {
+    .input-box{
+        height: 85px;
+    }
+}
+.main-btn{
+    text-align: center;
+    height: 330px;
+    overflow: hidden;
+}
+@media only screen and (max-width: 767px) {
+    .main-btn{
+        height: 300px;
+    }
+}
+
+@media only screen and (max-width: 	420px)  {
+    .main-btn{
+        height: 200px;
+    }
 }
 /*# sourceMappingURL=global.css.map */

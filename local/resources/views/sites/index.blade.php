@@ -7,18 +7,14 @@
             <img src="{{ asset('assets/img/landing.png') }}" alt="">
         </div>
         <div class="hero-text">
-            <img src="{{ asset('assets/img/landing_text.png') }}" alt="">
+            <img src="{{ asset('assets/img/landing_text2.png') }}" alt="">
         </div>
         <div class="btn-group">
-            <div class="col-10"></div>
-            <div class="col-35"><a class="btn-landing-gallery" href=""></a></div>
-            <div class="col-10"></div>
-            <div class="col-35"><a class="btn-landing-howto" href=""></a></div>
-            <div class="col-10"></div>
-            <a href="{{ url('activity') }}" class="btn-start"></a>
+            <div class="main-btn">
+                <a class="btn-landing-start" href="{{ url('activity') }}"></a>
+                <a class="btn-landing-howto" href="{{ url('how-to-play') }}"></a>
+            </div>
         </div>
-
-
     </div>
 @endsection
 @section('javascript')
