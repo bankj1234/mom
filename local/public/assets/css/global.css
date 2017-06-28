@@ -522,8 +522,8 @@ figure {
 .hero-img {
     background-color: #fff;
     display: inline-block;
-    margin-top: -60px;
-    max-width: 736px;
+    margin-top: -30px;
+    max-width: 752px;
 }
 
 @media only screen and (max-width: 767px) {

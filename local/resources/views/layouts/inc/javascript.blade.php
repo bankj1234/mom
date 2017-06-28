@@ -26,5 +26,5 @@
 <script src="{{ asset('assets/js/jquery.bxslider.min.js',env('URL_SSL')) }}"></script>
 <script src="{{ asset('assets/js/owl/owl.carousel.min.js',env('URL_SSL')) }}"></script>
 <script src="{{ asset('assets/js/crop/cropper.min.js',env('URL_SSL')) }}"></script>
-<script src="{{ asset('assets/js/function.js',env('URL_SSL')) }}"></script>
+<script src="{{ asset('assets/js/function.js?d',env('URL_SSL')) }}"></script>
 

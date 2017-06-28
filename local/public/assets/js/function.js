@@ -11,9 +11,10 @@ if($.browser.msie && $.browser.version<=10){
 if($.browser.mobile == true || navigator.userAgent.match(/iPad/i) != null){
 	chk.mobile = true;
 }
-$(window).load(function(){
-	loadWeb_hide();
-});
+$(window).on("load", function (e) {
+    loadWeb_hide();
+})
+
 $(document).ready(function(){
 	menu_init();
 	gallery_popup_init();

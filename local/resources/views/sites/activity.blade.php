@@ -39,7 +39,8 @@
                         </div>
                         <div class="input-box">
                             <div class="col-10"></div>
-                            <div class="col-80"><input class="input-msg" type="text" value="" name="input-msg"></div>
+                            <div class="col-80"><input maxlength="35" id="msgTxt" class="input-msg" type="text" value=""
+                                                       name="input-msg"></div>
                             <div class="col-10"></div>
                         </div>
                     </figure>
@@ -50,7 +51,7 @@
                         <div class="col-10"></div>
                     </div>
                     <div class="select-bike">
-                        <?php for ($i = 1; $i <= 5; $i++) { ?>
+                        <?php for ($i = 1; $i <= 4; $i++) { ?>
                         <a class="item" href="javascript:void(0);" rel="<?php echo $i; ?>"><img
                                     src="{{ asset('assets/img/frame',env('URL_SSL')) }}/frame<?php echo $i; ?>.png"
                                     alt=""/></a>
@@ -72,31 +73,30 @@
                         </div>
                     </div>
                     {{--<div class="box-header"><img class="text-result" src="{{ asset('assets/img/result-header.png',env('URL_SSL')) }}" alt=""></div>--}}
-                    <div class=""><img class="img-result" width="628px" height="auto"
-                                       src="{{ asset('assets/uploads/gif/Frame1.gif',env('URL_SSL')) }}" alt=""
-                                       loop="infinite"></div>
+                    <div class="img-result"></div>
                     <div class="box-share">
                         <div class="text-2">
                             <div class="col-10"></div>
-                            <div class="col-80"><img class="img-text" src="{{ asset('assets/img/result-text-share.png') }}"
+                            <div class="col-80"><img class="img-text"
+                                                     src="{{ asset('assets/img/result-text-share.png') }}"
                                                      alt=""></div>
                             <div class="col-10"></div>
                         </div>
                     </div>
                     <div class="box-btn btn-finish-img">
-                        <a class="btn-share btn-img-txt" href="#">
+                        <a class="btn-share btn-img-txt btn-fb-share" href="#">
                             <span class="img-share"><img src="{{ asset('assets/img/btn-share-fb.png',env('URL_SSL')) }}"
                                                          alt=""></span>
                         </a>
-                        <a class="btn-share btn-img-txt" href="#">
+                        <a class="btn-share btn-img-txt" href="line://msg/text/Nestle%20Mom%20https%3A%2F%2Fwww.bbnetworkgroup.com%2Fnestle%2Fpublic%2F">
                             <span class="img-share"><img
                                         src="{{ asset('assets/img/btn-share-line.png',env('URL_SSL')) }}" alt=""></span>
                         </a>
-                        <a class="btn-share btn-img-txt" href="#">
+                        <a class="btn-share btn-img-txt btn-fb-tw" href="#">
                             <span class="img-share"><img src="{{ asset('assets/img/btn-share-tw.png',env('URL_SSL')) }}"
                                                          alt=""></span>
                         </a>
-                        <a class="btn-share btn-img-txt" href="#" target="_blank">
+                        <a class="btn-share btn-img-txt btn-save" href="#" target="_blank">
                             <span class="img-share"><img
                                         src="{{ asset('assets/img/btn-share-save.png',env('URL_SSL')) }}" alt=""></span>
                         </a>
@@ -157,6 +157,7 @@
 
         });
         function fn_modifin_init() {
+            console.log('1');
             /* select msx init */
             $('.mdf-img .img').html(image.style_path);
             $('.select-bike .item').removeClass('active');
@@ -252,28 +253,34 @@
             uploadFile(canvas_crop_data);
         }
         function uploadFile(dataURL) {
-            step_2();
-            {{--popup_loading();--}}
-            {{--var task = image.style_index;--}}
-            {{--var token = "{{ csrf_token() }}";--}}
-            {{--$.ajax({--}}
-            {{--type: "POST",--}}
-            {{--url: "@if(env('APP_ENV') == 'prod'){{ secure_url('image/upload') }}@else{{ url('image/upload') }}@endif",--}}
-            {{--data: {--}}
-            {{--'image': dataURL,--}}
-            {{--"_token": token,--}}
-            {{--'frame': image.style_index--}}
-            {{--}--}}
-            {{--}).done(function (data) {--}}
-            {{--step_4();--}}
-            {{--$('.img-finish').html('<img src="' + $.parseJSON(data).fullpath + '"/>');--}}
-            {{--$('.btn-save').attr('href', '' + $.parseJSON(data).fullpath + '');--}}
-            {{--$('.btn-share').click(function (event) {--}}
-            {{--console.log(task);--}}
-            {{--shareImage($.parseJSON(data).fullpathshare,task);--}}
-            {{--});--}}
-            {{--$.fancybox.close();--}}
-            {{--});--}}
+
+            popup_loading();
+            var task = image.style_index;
+            var token = "{{ csrf_token() }}";
+            var input = document.getElementById("msgTxt");
+            $.ajax({
+                type: "POST",
+                url: "@if(env('APP_ENV') == 'prod'){{ secure_url('image/upload') }}@else{{ url('image/upload') }}@endif",
+                data: {
+                    'image': dataURL,
+                    "_token": token,
+                    'frame': image.style_index,
+                    'text': input.value
+                }
+            }).done(function (data) {
+                step_2();
+                $('.img-result').html('<img class="img-result" width="628px" height="auto" src="' + $.parseJSON(data).filename + '"/>');
+                $('.btn-save').attr('href', '' + $.parseJSON(data).fullpath + '');
+                $('.btn-fb-share').click(function (event) {
+                    //console.log(task);
+                    shareImage($.parseJSON(data).fullpath);
+                });
+                $('.btn-fb-tw').click(function (event) {
+                    //console.log(task);
+                    sharetw($.parseJSON(data).fullpath);
+                });
+                $.fancybox.close();
+            });
         }
         function readFile(input) {
             if (input.files && input.files[0]) {
@@ -293,63 +300,12 @@
             }
         }
 
-        function shareImage(img, task) {
-            var id = "@if(env('APP_ENV') == 'prod'){{ secure_url('') }}@else{{ url('') }}@endif";
-            var img = img;
-            var task = parseInt(task);
-            var text_title;
-            //console.log(task);
-            switch (task) {
-                case 6:
-                case 11:
-                case 14:
-                    text_title = "คุณคือ\"สายซิ่ง\" วิ่งแซงนรก แต่ตายตอนจบ เพราะ มาติดที่แยกไฟแดง";
-                    break;
-                case 10:
-                case 4:
-                case 3:
-                case 15:
-                    text_title = "คุณคือ\"สายเท่ชอบแอ็ค\" ไม่มีซิกแพ็ค แอ็คแล้วสาวไม่มอง";
-                    break;
-                case 1:
-                case 9:
-                case 12:
-                case 13:
-                    text_title = "คุณคือ \"สายบ้าพลัง\" ทำตัวคลั่งอย่างกับอยู่ในสงคราม จนคนถาม \"ที่ขี่นั้นรถถังหรือ MSX125SF\"";
-                    break;
-                case 2:
-                case 5:
-                case 8:
-                case 7:
-                    text_title = "คุณคือ \"สายแหว๋ว\" มีความแต๋วบางเวลา เน้นชิลล์ไม่เน้นมีเรื่อง";
-                    break;
-            }
-            //console.log(text_title);
-            FB.ui(
-                {
-                    method: 'share',
-                    href: id,     // The same than link in feed method
-                    title: text_title,  // The same than name in feed method
-                    picture: img,
-                    caption: "Modifin Thailand",
-                    description: 'มีมอไซค์หรือไม่มีคุณก็ร่วมเป็นส่วนหนึ่งของ Modifin Thailand ได้เช่นกัน อยากรู้ว่าตัวเองเป็นสายไหน คลิกเลย!',
-                },
-                function (response) {
-                    if (response && !response.error_message) {
-                        setShare();
-                    }
-                });
+        function shareImage(b) {
+            window.location = encodeURI('http://www.facebook.com/sharer/sharer.php?u='+b);
         }
 
-        function setShare() {
-            var token = "{{ csrf_token() }}";
-            $.post(
-                "@if(env('APP_ENV') == 'prod'){{ secure_url('./set-share') }}@else{{ url('./set-share') }}@endif"
-                , {"_token": token}, function (data) {
-
-                }
-            )
-            ;
+        function sharetw(b) {
+            window.location = encodeURI('https://twitter.com/share?url='+b);
         }
     </script>
 @endsection
