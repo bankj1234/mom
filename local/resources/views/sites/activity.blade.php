@@ -19,7 +19,8 @@
                         <div class="box-btn box-btn-browse">
 						<span class="btn-browse btn-img-txt">
 							<input type="file" id="import_image" accept="image/*"/>
-							<span class="img"><img src="{{ asset('assets/img/btn-new-upload.png',env('URL_SSL')) }}" alt=""></span>
+							<span class="img"><img src="{{ asset('assets/img/btn-new-upload.png',env('URL_SSL')) }}"
+                                                   alt=""></span>
 						</span>
                         </div>
                         <div class="btn-edit-img">
@@ -30,9 +31,10 @@
                         </div>
                     </figure>
                     <figure class="box-mdf-img">
-                        <div class="text-2">
+                        <div class="text-2 text-msg">
                             <div class="col-10"></div>
-                                <div class="col-80"><img class="img-text" src="{{ asset('assets/img/text2.png') }}" alt=""></div>
+                            <div class="col-80"><img class="img-text" src="{{ asset('assets/img/text2.png') }}" alt="">
+                            </div>
                             <div class="col-10"></div>
                         </div>
                         <div class="input-box">
@@ -41,14 +43,17 @@
                             <div class="col-10"></div>
                         </div>
                     </figure>
-                    <div class="text-3">
+                    <div class="text-3 text-frame">
                         <div class="col-10"></div>
-                        <div class="col-80"><img class="img-text" src="{{ asset('assets/img/text3.png') }}" alt=""></div>
+                        <div class="col-80"><img class="img-text" src="{{ asset('assets/img/text3.png') }}" alt="">
+                        </div>
                         <div class="col-10"></div>
                     </div>
                     <div class="select-bike">
-                        <?php for ($i=1; $i <= 5; $i++) { ?>
-                        <a class="item" href="javascript:void(0);" rel="<?php echo $i; ?>"><img src="{{ asset('assets/img/frame',env('URL_SSL')) }}/frame<?php echo $i; ?>.png" alt=""/></a>
+                        <?php for ($i = 1; $i <= 5; $i++) { ?>
+                        <a class="item" href="javascript:void(0);" rel="<?php echo $i; ?>"><img
+                                    src="{{ asset('assets/img/frame',env('URL_SSL')) }}/frame<?php echo $i; ?>.png"
+                                    alt=""/></a>
                         <?php } ?>
                     </div>
                     <div class="btn-edit-img">
@@ -58,20 +63,53 @@
                     </div>
                 </section>
                 <section class="section-select" id="step_2">
+                    <div class="box-header">
+                        <div class="text-2">
+                            <div class="col-10"></div>
+                            <div class="col-80"><img class="img-text" src="{{ asset('assets/img/result-header.png') }}"
+                                                     alt=""></div>
+                            <div class="col-10"></div>
+                        </div>
+                    </div>
+                    {{--<div class="box-header"><img class="text-result" src="{{ asset('assets/img/result-header.png',env('URL_SSL')) }}" alt=""></div>--}}
+                    <div class=""><img class="img-result" width="628px" height="auto"
+                                       src="{{ asset('assets/uploads/gif/Frame1.gif',env('URL_SSL')) }}" alt=""
+                                       loop="infinite"></div>
+                    <div class="box-share">
+                        <div class="text-2">
+                            <div class="col-10"></div>
+                            <div class="col-80"><img class="img-text" src="{{ asset('assets/img/result-text-share.png') }}"
+                                                     alt=""></div>
+                            <div class="col-10"></div>
+                        </div>
+                    </div>
                     <div class="box-btn btn-finish-img">
-                        <a class="btn-save btn-img-txt" href="#" target="_blank">
-                            <span class="img"><img src="{{ asset('assets/img/ico_save.svg',env('URL_SSL')) }}" alt=""></span>
-                            <span class="txt">บันทึก</span>
+                        <a class="btn-share btn-img-txt" href="#">
+                            <span class="img-share"><img src="{{ asset('assets/img/btn-share-fb.png',env('URL_SSL')) }}"
+                                                         alt=""></span>
                         </a>
                         <a class="btn-share btn-img-txt" href="#">
-                            <span class="img"><img src="{{ asset('assets/img/ico_share.svg',env('URL_SSL')) }}" alt=""></span>
-                            <span class="txt">แชร์</span>
+                            <span class="img-share"><img
+                                        src="{{ asset('assets/img/btn-share-line.png',env('URL_SSL')) }}" alt=""></span>
                         </a>
-                        <a class="btn-play-again btn-img-txt" onclick="location.reload();" href="javascript:void(0);">
-                            <span class="img"><img src="{{ asset('assets/img/ico_play-again.svg',env('URL_SSL')) }}" alt=""></span>
-                            <span class="txt">เล่นอีกครั้ง</span>
+                        <a class="btn-share btn-img-txt" href="#">
+                            <span class="img-share"><img src="{{ asset('assets/img/btn-share-tw.png',env('URL_SSL')) }}"
+                                                         alt=""></span>
                         </a>
+                        <a class="btn-share btn-img-txt" href="#" target="_blank">
+                            <span class="img-share"><img
+                                        src="{{ asset('assets/img/btn-share-save.png',env('URL_SSL')) }}" alt=""></span>
+                        </a>
+                        {{--<a class="btn-play-again btn-img-txt" onclick="location.reload();" href="javascript:void(0);">--}}
+                        {{--<span class="img"><img src="{{ asset('assets/img/ico_play-again.svg',env('URL_SSL')) }}" alt=""></span>--}}
+                        {{--</a>--}}
                     </div>
+                    <div class="btn-group">
+                        <div class="again-btn">
+                            <a class="btn-play-new" href="javascript:void(0);" onclick="location.reload();"></a>
+                        </div>
+                    </div>
+                    <div></div>
                 </section>
             </div>
         </div>
@@ -90,59 +128,61 @@
         image.size = 600;
         image.style_index = 1;
 
-        $(document).ready(function(){
+        $(document).ready(function () {
 
             fn_modifin_init();
 
-            $('.btn-step-select').click(function(e){
+            $('.btn-step-select').click(function (e) {
                 step_2();
                 GA_select_style(image.style_index);
                 e.preventDefault();
             })
 
             $('#rotate').on('input', function (event) {
-                image.el.cropper('rotateTo',$(this).val());
+                image.el.cropper('rotateTo', $(this).val());
             });
             $('#zoom').on('input', function (event) {
-                image.el.cropper('zoomTo',$(this).val());
+                image.el.cropper('zoomTo', $(this).val());
             });
-            image.el.on('zoom',function(e){
+            image.el.on('zoom', function (e) {
                 //console.log(e.ratio);
                 $('#zoom').val(e.ratio);
-                if(e.ratio >= '2'){
+                if (e.ratio >= '2') {
                     e.preventDefault();
                 }
             });
-            $('#import_image').on('change', function () { readFile(this); });
+            $('#import_image').on('change', function () {
+                readFile(this);
+            });
 
         });
-        function fn_modifin_init(){
+        function fn_modifin_init() {
             /* select msx init */
             $('.mdf-img .img').html(image.style_path);
             $('.select-bike .item').removeClass('active');
             $('.select-bike .item[rel="0"]').addClass('active');
             $('.select-bike').owlCarousel({
-                loop:true,
-                margin:5,
-                nav:true,
-                pullDrag:false,
-                smartSpeed:200,
-                responsive:{
-                    0:{
-                        items:3,
-                        slideBy:1,
+                loop: true,
+                margin: 5,
+                nav: true,
+                pullDrag: false,
+                smartSpeed: 200,
+                responsive: {
+                    0: {
+                        items: 3,
+                        slideBy: 1,
                     },
-                    600:{
-                        items:3,
-                        slideBy:3
+                    600: {
+                        items: 3,
+                        slideBy: 3
                     },
-                    1000:{
-                        items:5,
-                        slideBy:5
+                    1000: {
+                        items: 5,
+                        slideBy: 5
                     }
                 }
             });
-            $('.select-bike .item').click(function(e) {
+            $('.select-bike .item').click(function (e) {
                 image.style_index = $(this).attr('rel');
                 image.style_path = $(this).html();
                 $('.select-bike .item').removeClass('active');
@@ -152,50 +192,44 @@
             });
             step_init();
         }
-        function step_init(){
+        function step_init() {
             $('#step_2').hide();
             btn_edit_img_hide();
-            btn_finish_img_hide();
+            //btn_finish_img_hide();
         }
         /* select bike */
-        function step_1(){
+        function step_1() {
 
         }
         /* browse img */
-        function step_2(){
+        function step_2() {
             $('#step_1').hide();
             $('#step_2').show();
         }
         /* crop img */
-        function step_3(){
+        function step_3() {
             $('.box-btn-browse').hide();
             btn_edit_img_show();
 
         }
         /* finish img */
-        function step_4(){
+        function step_4() {
             $('#preview-img .img,#preview-img .img-browse').hide();
-            $('.section-select-browse .section-title').html('แชร์...สไตล์คุณ');
             btn_edit_img_hide();
-            btn_finish_img_show();
         }
-        function btn_edit_img_show(){
+        function btn_edit_img_show() {
             $('.btn-edit-img').show();
         }
-        function btn_edit_img_hide(){
+        function btn_edit_img_hide() {
             $('.btn-edit-img').hide();
         }
-        function btn_finish_img_show(){
-            $('.btn-finish-img').show();
+
+        function fn_save_img() {
         }
-        function btn_finish_img_hide(){
-            $('.btn-finish-img').hide();
+        function fn_share_img() {
         }
 
-        function fn_save_img(){}
-        function fn_share_img(){}
-
-        function crop_init(){
+        function crop_init() {
             image.el.cropper('destroy');
             image.el.cropper({
                 viewMode: 0,
@@ -206,14 +240,14 @@
                 cropBoxMovable: false,
                 cropBoxResizable: false,
                 toggleDragModeOnDblclick: false,
-                ready:function(){
-                    image.el.cropper("setCropBoxData", { left: 0, top: 0, width: 480, height: 480 });
-                    $('.cropper-drag-box').addClass('sty-'+image.style_index);
+                ready: function () {
+                    image.el.cropper("setCropBoxData", {left: 0, top: 0, width: 480, height: 480});
+                    $('.cropper-drag-box').addClass('sty-' + image.style_index);
                 }
             });
         }
-        function finish(){
-            var canvas_crop = image.el.cropper('getCroppedCanvas',{width:image.size,height:image.size});
+        function finish() {
+            var canvas_crop = image.el.cropper('getCroppedCanvas', {width: image.size, height: image.size});
             var canvas_crop_data = canvas_crop.toDataURL('image/png');
             uploadFile(canvas_crop_data);
         }
@@ -223,22 +257,22 @@
             {{--var task = image.style_index;--}}
             {{--var token = "{{ csrf_token() }}";--}}
             {{--$.ajax({--}}
-                {{--type: "POST",--}}
-                {{--url: "@if(env('APP_ENV') == 'prod'){{ secure_url('image/upload') }}@else{{ url('image/upload') }}@endif",--}}
-                {{--data: {--}}
-                    {{--'image': dataURL,--}}
-                    {{--"_token": token,--}}
-                    {{--'frame': image.style_index--}}
-                {{--}--}}
+            {{--type: "POST",--}}
+            {{--url: "@if(env('APP_ENV') == 'prod'){{ secure_url('image/upload') }}@else{{ url('image/upload') }}@endif",--}}
+            {{--data: {--}}
+            {{--'image': dataURL,--}}
+            {{--"_token": token,--}}
+            {{--'frame': image.style_index--}}
+            {{--}--}}
             {{--}).done(function (data) {--}}
-                {{--step_4();--}}
-                {{--$('.img-finish').html('<img src="' + $.parseJSON(data).fullpath + '"/>');--}}
-                {{--$('.btn-save').attr('href', '' + $.parseJSON(data).fullpath + '');--}}
-                {{--$('.btn-share').click(function (event) {--}}
-                    {{--console.log(task);--}}
-                    {{--shareImage($.parseJSON(data).fullpathshare,task);--}}
-                {{--});--}}
-                {{--$.fancybox.close();--}}
+            {{--step_4();--}}
+            {{--$('.img-finish').html('<img src="' + $.parseJSON(data).fullpath + '"/>');--}}
+            {{--$('.btn-save').attr('href', '' + $.parseJSON(data).fullpath + '');--}}
+            {{--$('.btn-share').click(function (event) {--}}
+            {{--console.log(task);--}}
+            {{--shareImage($.parseJSON(data).fullpathshare,task);--}}
+            {{--});--}}
+            {{--$.fancybox.close();--}}
             {{--});--}}
         }
         function readFile(input) {
@@ -248,7 +282,7 @@
                     $('.section-select-browse .box-mdf-img .img').hide();
                     $('.section-select-browse .box-mdf-img .img-browse').addClass('show');
                     //$('.img-browse').addClass('sty-'+image.style_index);
-                    $('#image').attr('src',e.target.result);
+                    $('#image').attr('src', e.target.result);
                     $('.box-img-space').show();
                     step_3();
                     crop_init();
@@ -259,7 +293,7 @@
             }
         }
 
-        function shareImage(img,task) {
+        function shareImage(img, task) {
             var id = "@if(env('APP_ENV') == 'prod'){{ secure_url('') }}@else{{ url('') }}@endif";
             var img = img;
             var task = parseInt(task);
