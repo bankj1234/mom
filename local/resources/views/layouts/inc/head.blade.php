@@ -15,7 +15,7 @@
     <link href="{{ asset('/assets/js/fancybox/jquery.fancybox.css',env('URL_SSL')) }}" rel="stylesheet"/>
     <link href="{{ asset('/assets/js/owl/owl.carousel.css',env('URL_SSL')) }}" rel="stylesheet"/>
     <link href="{{ asset('/assets/js/owl/owl.transitions.css',env('URL_SSL')) }}" rel="stylesheet"/>
-    <script src="{{ asset('/assets/js/core/jquery.js',env('URL_SSL')) }}"></script>
+    <script src="{{ asset('/assets/js/core/jquery.min.js',env('URL_SSL')) }}"></script>
     <!--[if lt IE 9]>
     <script type="text/javascript" src="{{ asset('/assets/js/core/html5shiv.js',env('URL_SSL')) }}"></script>
     <![endif]-->
