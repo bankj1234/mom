@@ -3,80 +3,100 @@
 
 @font-face {
     font-family: 'KittithadaMedium65Italic';
-    src: url('fonts/KittithadaMedium65Italic.eot?#iefix') format('embedded-opentype'),
-    url('fonts/KittithadaMedium65Italic.woff') format('woff'), url('fonts/KittithadaMedium65Italic.ttf') format('truetype'), url('fonts/KittithadaMedium65Italic.svg#KittithadaMedium65Italic') format('svg');
+    src: url('fonts/KittithadaMedium65Italic.eot#') format('eot'),
+    url('fonts/KittithadaMedium65Italic.woff') format('woff'),
+    url('fonts/KittithadaMedium65Italic.ttf') format('truetype'),
+    url('fonts/KittithadaMedium65Italic.svg#KittithadaMedium65Italic') format('svg');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'KittithadaThin35Italic';
-    src: url('fonts/KittithadaThin35Italic.eot?#iefix') format('embedded-opentype'),
-    url('fonts/KittithadaThin35Italic.woff') format('woff'), url('fonts/KittithadaThin35Italic.ttf') format('truetype'), url('fonts/KittithadaThin35Italic.svg#KittithadaThin35Italic') format('svg');
+    src: url('fonts/KittithadaThin35Italic.eot#') format('eot'),
+    url('fonts/KittithadaThin35Italic.woff') format('woff'),
+    url('fonts/KittithadaThin35Italic.ttf') format('truetype'),
+    url('fonts/KittithadaThin35Italic.svg#KittithadaThin35Italic') format('svg');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'KittithadaBold75';
-    src: url('fonts/KittithadaBold75.eot?#iefix') format('embedded-opentype'),
-    url('fonts/KittithadaBold75.woff') format('woff'), url('fonts/KittithadaBold75.ttf') format('truetype'), url('fonts/KittithadaBold75.svg#KittithadaBold75') format('svg');
+    src: url('fonts/KittithadaBold75.eot#') format('eot'),
+    url('fonts/KittithadaBold75.woff') format('woff'),
+    url('fonts/KittithadaBold75.ttf') format('truetype'),
+    url('fonts/KittithadaBold75.svg#KittithadaBold75') format('svg');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'KittithadaMedium65';
-    src: url('fonts/KittithadaMedium65.eot?#iefix') format('embedded-opentype'),
-    url('fonts/KittithadaMedium65.woff') format('woff'), url('fonts/KittithadaMedium65.ttf') format('truetype'), url('fonts/KittithadaMedium65.svg#KittithadaMedium65') format('svg');
+    src: url('fonts/KittithadaMedium65.eot#') format('eot'),
+    url('fonts/KittithadaMedium65.woff') format('woff'),
+    url('fonts/KittithadaMedium65.ttf') format('truetype'),
+    url('fonts/KittithadaMedium65.svg#KittithadaMedium65') format('svg');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'KittithadaRoman55Italic';
-    src: url('fonts/KittithadaRoman55Italic.eot?#iefix') format('embedded-opentype'),
-    url('fonts/KittithadaRoman55Italic.woff') format('woff'), url('fonts/KittithadaRoman55Italic.ttf') format('truetype'), url('fonts/KittithadaRoman55Italic.svg#KittithadaRoman55Italic') format('svg');
+    src: url('fonts/KittithadaRoman55Italic.eot#') format('eot'),
+    url('fonts/KittithadaRoman55Italic.woff') format('woff'),
+    url('fonts/KittithadaRoman55Italic.ttf') format('truetype'),
+    url('fonts/KittithadaRoman55Italic.svg#KittithadaRoman55Italic') format('svg');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'KittithadaRoman55';
-    src: url('fonts/KittithadaRoman55.eot?#iefix') format('embedded-opentype'),
-    url('fonts/KittithadaRoman55.woff') format('woff'), url('fonts/KittithadaRoman55.ttf') format('truetype'), url('fonts/KittithadaRoman55.svg#KittithadaRoman55') format('svg');
+    src: url('fonts/KittithadaRoman55.eot#') format('eot'),
+    url('fonts/KittithadaRoman55.woff') format('woff'),
+    url('fonts/KittithadaRoman55.ttf') format('truetype'),
+    url('fonts/KittithadaRoman55.svg#KittithadaRoman55') format('svg');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'KittithadaLight45';
-    src: url('fonts/KittithadaLight45.eot?#iefix') format('embedded-opentype'),
-    url('fonts/KittithadaLight45.woff') format('woff'), url('fonts/KittithadaLight45.ttf') format('truetype'), url('fonts/KittithadaLight45.svg#KittithadaLight45') format('svg');
+    src: url('fonts/KittithadaLight45.eot#') format('eot'),
+    url('fonts/KittithadaLight45.woff') format('woff'),
+    url('fonts/KittithadaLight45.ttf') format('truetype'),
+    url('fonts/KittithadaLight45.svg#KittithadaLight45') format('svg');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'KittithadaLight45Italic';
-    src: url('fonts/KittithadaLight45Italic.eot?#iefix') format('embedded-opentype'),
-    url('fonts/KittithadaLight45Italic.woff') format('woff'), url('fonts/KittithadaLight45Italic.ttf') format('truetype'), url('fonts/KittithadaLight45Italic.svg#KittithadaLight45Italic') format('svg');
+    src: url('fonts/KittithadaLight45Italic.eot#') format('eot'),
+    url('fonts/KittithadaLight45Italic.woff') format('woff'),
+    url('fonts/KittithadaLight45Italic.ttf') format('truetype'),
+    url('fonts/KittithadaLight45Italic.svg#KittithadaLight45Italic') format('svg');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'KittithadaThin35';
-    src: url('fonts/KittithadaThin35.eot?#iefix') format('embedded-opentype'),
-    url('fonts/KittithadaThin35.woff') format('woff'), url('fonts/KittithadaThin35.ttf') format('truetype'), url('fonts/KittithadaThin35.svg#KittithadaThin35') format('svg');
+    src: url('fonts/KittithadaThin35.eot#') format('eot'),
+    url('fonts/KittithadaThin35.woff') format('woff'),
+    url('fonts/KittithadaThin35.ttf') format('truetype'),
+    url('fonts/KittithadaThin35.svg#KittithadaThin35') format('svg');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'KittithadaBold75Italic';
-    src: url('fonts/KittithadaBold75Italic.eot?#iefix') format('embedded-opentype'),
-    url('fonts/KittithadaBold75Italic.woff') format('woff'), url('fonts/KittithadaBold75Italic.ttf') format('truetype'), url('fonts/KittithadaBold75Italic.svg#KittithadaBold75Italic') format('svg');
+    src: url('fonts/KittithadaBold75Italic.eot#') format('eot'),
+    url('fonts/KittithadaBold75Italic.woff') format('woff'),
+    url('fonts/KittithadaBold75Italic.ttf') format('truetype'),
+    url('fonts/KittithadaBold75Italic.svg#KittithadaBold75Italic') format('svg');
     font-weight: normal;
     font-style: normal;
 }

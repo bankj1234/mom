@@ -88,7 +88,7 @@
                             <span class="img-share"><img src="{{ asset('assets/img/btn-share-fb.png',env('URL_SSL')) }}"
                                                          alt=""></span>
                         </a>
-                        <a class="btn-share btn-img-txt" href="line://msg/text/Nestle%20Mom%20https%3A%2F%2Fwww.bbnetworkgroup.com%2Fnestle%2Fpublic%2F">
+                        <a class="btn-share btn-img-txt" href="{{ env('URL_LINE') }}">
                             <span class="img-share"><img
                                         src="{{ asset('assets/img/btn-share-line.png',env('URL_SSL')) }}" alt=""></span>
                         </a>
@@ -129,9 +129,7 @@
         image.style_index = 1;
 
         $(document).ready(function () {
-
             fn_modifin_init();
-
             $('.btn-step-select').click(function (e) {
                 step_2();
                 GA_select_style(image.style_index);
@@ -159,35 +157,11 @@
             $('.mdf-img .img').html(image.style_path);
             $('.select-bike .item').removeClass('active');
             $('.select-bike .item[rel="1"]').addClass('active');
-
-//            $('.select-bike').owlCarousel({
-//                loop: true,
-//                margin: 5,
-//                nav: true,
-//                pullDrag: false,
-//                smartSpeed: 200,
-//                responsive: {
-//                    0: {
-//                        items: 3,
-//                        slideBy: 1,
-//                    },
-//                    600: {
-//                        items: 3,
-//                        slideBy: 3
-//                    },
-//                    1000: {
-//                        items: 5,
-//                        slideBy: 5
-//                    }
-//                }
-//            });
             $('.select-bike .item').click(function (e) {
                 image.style_index = $(this).attr('rel');
                 image.style_path = $(this).html();
                 $('.select-bike .item').removeClass('active');
                 $(this).addClass('active');
-                //console.log(image.style_path);
-                //$('.mdf-img .img').html(image.style_path);
             });
             step_init();
         }
@@ -251,7 +225,7 @@
             uploadFile(canvas_crop_data);
         }
         function uploadFile(dataURL) {
-
+            ga('send','event','Select','Frame '+image.style_index);
             popup_loading();
             var task = image.style_index;
             var token = "{{ csrf_token() }}";
@@ -299,11 +273,15 @@
         }
 
         function shareImage(b) {
-            window.location = encodeURI('http://www.facebook.com/sharer/sharer.php?u='+b);
+            ga('send','event','Share','Facebook');
+            var url = encodeURI('http://www.facebook.com/sharer/sharer.php?u='+b);
+            window.open(url,'_blank');
         }
 
         function sharetw(b) {
-            window.location = encodeURI('https://twitter.com/share?url='+b);
+            ga('send','event','Share','Twitter');
+            var url = encodeURI('https://twitter.com/share?url='+b);
+            window.open(url,'_blank');
         }
     </script>
 @endsection

@@ -53,7 +53,7 @@ class SiteController extends Controller
 
     public function uploadResult(Request $request)
     {
-        $baseURL = 'https://www.bbnetworkgroup.com/nestle/public';
+        $baseURL = env('URL_PD');
         $frameno = $request->frame;
         $text = $request->text;
         $img = $request->image;
@@ -64,13 +64,16 @@ class SiteController extends Controller
         mkdir('./assets/uploads/' . $imageFolderName);
         $filePath = './assets/uploads/' . $imageFolderName;
         $file1 = '';
+
         for ($i = 1; $i <= 10; $i++) {
+            $bg = Image::canvas(600, 600, '#5dc5d8');
             $photo = Image::make($file);
             $photo->resize(600,600);
             $frame = Image::make('assets/img/frame/f'.$frameno.'/'.$i.'.png');
             $frame->resize(600,600);
-            $photo->insert($frame,'top-left', 0, 0);
-            $photo->text($text, 300, 450, function($font) {
+            $bg->insert($photo,'top-left', 0, 0);
+            $bg->insert($frame,'top-left', 0, 0);
+            $bg->text($text, 300, 450, function($font) {
                 $font->file('./assets/css/fonts/KittithadaLight45.ttf');
                 $font->size(50);
                 $font->color('#FFFFFF');
@@ -78,7 +81,7 @@ class SiteController extends Controller
                 $font->valign('top');
             });
 
-            $photo->save($filePath.'/'.$i.'.png',50);
+            $bg->save($filePath.'/'.$i.'.png',30);
             $file1 .= 'assets/uploads/' . $imageFolderName . '/'.$i.'.png ';
         }
         $file2 = "assets/uploads/$imageFolderName/mom.gif";
