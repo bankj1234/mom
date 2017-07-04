@@ -244,7 +244,7 @@ img {
 }
 
 .btnSty1 span {
-    font: 400 36px/1 "Kittithada Bold 75";
+    font: 400 36px/1 "KittithadaBold75";
     position: relative;
     z-index: 2;
     color: #fff;
@@ -364,24 +364,29 @@ figure {
 .main-header {
     background-color: #004f94;
     box-shadow: 0 0 7px rgba(0, 0, 0, 0.8);
-    height: 111px;
+    height: 88px;
     position: relative;
     z-index: 99;
 }
 
 .main-header .container {
-    padding: 37px 0 13px 0;
+    padding: 23px 0 17px 0;
 }
 
 .main-header .logo {
     display: block;
-    width: 200px;
-    margin: 0 auto;
+    width: 158px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    position: absolute;
 }
 
 .main-header .btn-menu {
     position: absolute;
-    top: 0;
+    top: 11px;
     left: -10px;
     z-index: 999;
     width: 61px;
@@ -406,7 +411,7 @@ figure {
     width: 100%;
     height: 100%;
     position: absolute;
-    top: 25px;
+    top: 0;
     left: 0;
 }
 
@@ -443,6 +448,24 @@ figure {
     transform: scale(1);
 }
 
+@media only screen and (max-width: 767px) {
+    .main-header .btn-menu .normal {
+        background-size: 44px auto;
+    }
+
+    .main-header .btn-menu .active {
+        background-size: 44px auto;
+    }
+
+    .main-header .btn-menu.active .normal {
+        background-size: 44px auto;
+    }
+
+    .main-header .btn-menu.active .active {
+        background-size: 44px auto;
+    }
+}
+
 .main-header .main-nav {
     background-color: #004f94;
     z-index: 1;
@@ -475,7 +498,7 @@ figure {
 }
 
 .main-header .main-nav a {
-    font: 400 50px/1 "Kittithada Light 45";
+    font: 400 50px/1 "KittithadaLight45";
     color: #fff;
     text-decoration: none;
     text-align: center;
@@ -485,7 +508,7 @@ figure {
 }
 
 .main-header .main-nav a:hover {
-    font-family: "Kittithada Bold 75";
+    font-family: "KittithadaBold75";
 }
 
 @media only screen and (max-width: 767px) {
@@ -497,8 +520,6 @@ figure {
 /* footer */
 
 .main-footer {
-    /* background: url('../img/separate.jpg') 50% 50% no-repeat;
-      background-size: auto 100%; */
     background-color: #edf5fc;
     text-align: center;
     height: 70px;
@@ -512,10 +533,22 @@ figure {
     display: block;
     background: transparent url('../img/btn_policy.png') center top no-repeat;
 }
-
 .twitterbird:hover {
     background-image: url('../img/btn_policy_hover.png');
 }
+@media only screen and (max-width: 767px) {
+
+    .twitterbird {
+        margin-top: 26px;
+        background-size: 130px auto;
+    }
+    .twitterbird:hover {
+        margin-top: 26px;
+        background-size: 130px auto;
+    }
+}
+
+
 
 .main-footer a {
     display: inline-block;
@@ -524,7 +557,7 @@ figure {
 
 @media only screen and (max-width: 767px) {
     .main-footer a {
-
+        height: 23px;
     }
 }
 
@@ -548,7 +581,207 @@ figure {
 
 @media only screen and (max-width: 767px) {
     .hero-img {
-        margin: -30px 20px 0 20px;
+        margin: -12px 20px 0 20px;
+    }
+}
+.show-case{
+    position: relative;
+    width: 752px;
+    height:474px;
+}
+
+.show-case .show1{
+   position: absolute;
+    background: url("../img/show/f1.png") 50% 100% no-repeat;
+    background-size: 100% auto;
+    width: 185px;
+    height: 198px;
+    left:9px;
+    top:46px;
+    z-index: 10;
+}
+.show-case .show1 img{
+    padding-left: 13px;
+    width: 157px;
+    padding-top: 16px;
+}
+
+.show-case .show2{
+    position: absolute;
+    background: url("../img/show/f2.png") 50% 100% no-repeat;
+    background-size: 100% auto;
+    width: 197px;
+    height: 204px;
+    left:29px;
+    top:254px;
+    z-index: 10;
+}
+.show-case .show2 img{
+    padding-left: 14px;
+    width: 168px;
+    padding-top: 10px;
+}
+
+.show-case .show3{
+    position: absolute;
+    background: url("../img/show/f3.png") 50% 100% no-repeat;
+    background-size: 100% auto;
+    width: 312px;
+    height: 335px;
+    left:226px;
+    top:2px;
+    z-index: 20;
+}
+.show-case .show3 img{
+    padding-left: 15px;
+    width: 282px;
+    padding-top: 14px;
+}
+
+.show-case .show4{
+    position: absolute;
+    background: url("../img/show/f4.png") 50% 100% no-repeat;
+    background-size: 100% auto;
+    width: 192px;
+    height: 202px;
+    left:286px;
+    top:276px;
+    z-index: 10;
+}
+.show-case .show4 img{
+    padding-left: 14px;
+    width: 163px;
+    padding-top: 13px;
+}
+
+.show-case .show5{
+    position: absolute;
+    background: url("../img/show/f5.png") 50% 100% no-repeat;
+    background-size: 100% auto;
+    width: 184px;
+    height: 195px;
+    left:513px;
+    top:11px;
+    z-index: 10;
+}
+.show-case .show5 img{
+    padding-left: 13px;
+    width: 157px;
+    padding-top: 13px;
+}
+
+.show-case .show6{
+    position: absolute;
+    background: url("../img/show/f6.png") 50% 100% no-repeat;
+    background-size: 100% auto;
+    width: 196px;
+    height: 208px;
+    left:544px;
+    top:223px;
+    z-index: 10;
+}
+.show-case .show6 img{
+    padding-left: 13px;
+    width: 169px;
+    padding-top: 13px;
+}
+
+.show-case .effect{
+    position: absolute;
+    background: url("../img/show/effect.png") 50% 100% no-repeat;
+    background-size: 100% auto;
+    width: 752px;
+    height: 474px;
+    left:0px;
+    top:0px;
+    z-index: 30;
+}
+
+@media only screen and (max-width: 767px) {
+
+}
+
+@media only screen and (max-width: 420px) {
+    .show-case{
+        position: relative;
+        width: 280px;
+        height:176px;
+    }
+    .show-case .effect{
+        position: absolute;
+        background: url("../img/show/effect.png") 50% 100% no-repeat;
+        background-size: 100% auto;
+        width: 280px;
+        height: 176px;
+        left:0px;
+        top:0px;
+        z-index: 30;
+    }
+    .show-case .show1{
+        width: 64px;
+        height: 67px;
+        left:4px;
+        top:18px;
+    }
+    .show-case .show1 img{
+        padding-left: 4px;
+        padding-top: 3px;
+        width: 55px;
+    }
+    .show-case .show2{
+        width: 68px;
+        height: 71px;
+        left:11px;
+        top:94px;
+    }
+    .show-case .show2 img{
+        padding-left: 4px;
+        padding-top: 4px;
+        width: 59px;
+    }
+    .show-case .show3{
+        width: 111px;
+        height: 120px;
+        left:85px;
+        top:1px;
+    }
+    .show-case .show3 img{
+        padding-left: 6px;
+        padding-top: 8px;
+        width: 99px;
+    }
+    .show-case .show4{
+        width: 67px;
+        height: 70px;
+        left:107px;
+        top:103px;
+    }
+    .show-case .show4 img{
+        padding-left: 5px;
+        padding-top: 5px;
+        width: 57px;
+    }
+    .show-case .show5{
+        width: 68px;
+        height: 72px;
+        left:191px;
+        top:5px;
+    }
+    .show-case .show5 img{
+        padding-left: 5px;
+        padding-top: 5px;
+        width: 58px;
+    }
+    .show-case .show6{
+        width: 72px;
+        height: 77px;
+        left:203px;
+        top:83px;
+    }
+    .show-case .show6 img{
+        padding-left: 5px;
+        padding-top: 5px;
+        width: 62px;
     }
 }
 
@@ -1345,7 +1578,7 @@ Loading CSS ====================================== */
 
 .input-msg {
     font-family: KittithadaLight45;
-    font-size: 4em;
+    font-size: 3em;
     text-align: center;
     color: #07bff4;
     width: 100%;
@@ -1487,11 +1720,12 @@ Loading CSS ====================================== */
     }
 }
 
-.text-msg{
+.text-msg {
     margin-bottom: 15px;
 }
 
-.text-frame{
+.text-frame {
     margin-bottom: 15px;
 }
+
 /*# sourceMappingURL=global.css.map */

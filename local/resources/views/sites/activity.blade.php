@@ -26,8 +26,6 @@
                         <div class="btn-edit-img">
                             <h3>ซูม</h3>
                             <input class="input-slider" type="range" id="zoom" min='0' max='2' step='0.1'/>
-                            <h3>หมุน</h3>
-                            <input class="input-slider" type="range" id="rotate" min='-45' max='45' step='1'/>
                         </div>
                     </figure>
                     <figure class="box-mdf-img">
@@ -39,8 +37,10 @@
                         </div>
                         <div class="input-box">
                             <div class="col-10"></div>
-                            <div class="col-80"><input maxlength="35" id="msgTxt" class="input-msg" type="text" value=""
-                                                       name="input-msg"></div>
+                            <div class="col-80">
+                                <input maxlength="40" id="msgTxt" class="input-msg" type="text" value=""
+                                                       name="input-msg">
+                            </div>
                             <div class="col-10"></div>
                         </div>
                     </figure>
@@ -136,9 +136,6 @@
                 e.preventDefault();
             })
 
-            $('#rotate').on('input', function (event) {
-                image.el.cropper('rotateTo', $(this).val());
-            });
             $('#zoom').on('input', function (event) {
                 image.el.cropper('zoomTo', $(this).val());
             });
