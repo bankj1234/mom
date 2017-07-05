@@ -9,6 +9,7 @@ class SiteController extends Controller
 {
 
     var $word1 = '';
+    var $word2 = '';
 
     public function __construct()
     {
@@ -17,11 +18,6 @@ class SiteController extends Controller
         $this->middleware('guest');
     }
 
-    /**
-     * Show the application welcome screen to the user.
-     *
-     * @return Response
-     */
     public function index()
     {
         return view('sites/index');
@@ -57,28 +53,26 @@ class SiteController extends Controller
         $wordBreaker = new WordBreaker("thai-dic/data/tdict-std.txt");
         $countWord = count($wordBreaker->breakIntoWords($text));
         $num1 = 0;
-
         $randstatus = rand(0,3);
         $randimg = rand(1,6);
-
-
+        $wordar = array();
         foreach ($wordBreaker->breakIntoWords($text) as $in => $w) {
-            $omg1 = $this->word1 . '' . $w;
+            $omg1 = $this->word2 . '' . $w;
             $len = $this->getStrLenTH($omg1);
             if ($len > 20) {
                 if (($in + 1) == $countWord) {
-                    $word1[] = $this->word1;
-                    $word1[] = $w;
+                    $wordar[] = $this->word2;
+                    $wordar[] = $w;
                 } else {
-                    $word1[] = $this->word1;
-                    $this->word1 = $w;
+                    $wordar[] = $this->word2;
+                    $this->word2 = $w;
                     $num1++;
                 }
             } else {
                 if (($in + 1) == $countWord) {
-                    $word1[] = $omg1;
+                    $wordar[] = $omg1;
                 } else {
-                    $this->word1 = $omg1;
+                    $this->word2 = $omg1;
                 }
             }
         }
@@ -91,7 +85,6 @@ class SiteController extends Controller
     }elseif($frameno == 4){
         $num = 10;
     }
-
         for ($i = 1; $i <= $num; $i++) {
             $bg = Image::canvas(600, 600, '#5dc5d8');
             $photo = Image::make($file);
@@ -100,9 +93,17 @@ class SiteController extends Controller
             $frame->resize(600,600);
             $bg->insert($photo,'top-left', 0, 0);
             $bg->insert($frame,'top-left', 0, 0);
-            foreach($word1 as $key => $word){
+            foreach($wordar as $key => $wordin){
                 if($key == 0){
-                    $bg->text($word, 300, 355, function($font) {
+                    $bg->text($wordin, 300, 355, function($font) {
+                        $font->file('./assets/css/fonts/KittithadaLight45.ttf');
+                        $font->size(70);
+                        $font->color('#FFFFFF');
+                        $font->align('center');
+                        $font->valign('top');
+                    });
+                }elseif($key == 1){
+                    $bg->text($wordin, 300, 418, function($font) {
                         $font->file('./assets/css/fonts/KittithadaLight45.ttf');
                         $font->size(70);
                         $font->color('#FFFFFF');
@@ -110,7 +111,7 @@ class SiteController extends Controller
                         $font->valign('top');
                     });
                 }else{
-                    $bg->text($word, 300, 418, function($font) {
+                    $bg->text($wordin, 300, 481, function($font) {
                         $font->file('./assets/css/fonts/KittithadaLight45.ttf');
                         $font->size(70);
                         $font->color('#FFFFFF');
@@ -118,7 +119,6 @@ class SiteController extends Controller
                         $font->valign('top');
                     });
                 }
-
             }
             if($i == 10){
                 if($randstatus == 3){

@@ -51,7 +51,7 @@
                         <div class="col-10"></div>
                     </div>
                     <div class="select-bike">
-                        <?php for ($i = 1; $i <= 3; $i++) { ?>
+                        <?php for ($i = 1; $i <= 6; $i++) { ?>
                         <a style="display: inline-block;width: 25%;margin: 0 5px 0 5px;" class="item" href="javascript:void(0);" rel="<?php echo $i; ?>"><img
                                     src="{{ asset('assets/img/frame',env('URL_SSL')) }}/frame<?php echo $i; ?>.png"
                                     alt=""/></a>
@@ -88,7 +88,7 @@
                             <span class="img-share"><img src="{{ asset('assets/img/btn-share-fb.png',env('URL_SSL')) }}"
                                                          alt=""></span>
                         </a>
-                        <a class="btn-share btn-img-txt" href="{{ env('URL_LINE') }}">
+                        <a class="btn-share btn-img-txt btn-line-share" href="#">
                             <span class="img-share"><img
                                         src="{{ asset('assets/img/btn-share-line.png',env('URL_SSL')) }}" alt=""></span>
                         </a>
@@ -96,13 +96,10 @@
                             <span class="img-share"><img src="{{ asset('assets/img/btn-share-tw.png',env('URL_SSL')) }}"
                                                          alt=""></span>
                         </a>
-                        <a class="btn-share btn-img-txt btn-save" href="#" target="_blank">
+                        <a class="btn-share btn-img-txt btn-save" href="#">
                             <span class="img-share"><img
                                         src="{{ asset('assets/img/btn-share-save.png',env('URL_SSL')) }}" alt=""></span>
                         </a>
-                        {{--<a class="btn-play-again btn-img-txt" onclick="location.reload();" href="javascript:void(0);">--}}
-                        {{--<span class="img"><img src="{{ asset('assets/img/ico_play-again.svg',env('URL_SSL')) }}" alt=""></span>--}}
-                        {{--</a>--}}
                     </div>
                     <div class="btn-group">
                         <div class="again-btn">
@@ -239,15 +236,20 @@
             }).done(function (data) {
                 step_2();
                 $('.img-result').html('<img class="img-result" width="628px" height="auto" src="' + $.parseJSON(data).filename + '"/>');
-                $('.btn-save').attr('href', '' + $.parseJSON(data).fullpath + '');
+                //$('.btn-save').attr('href', '' + $.parseJSON(data).fullpath + '');
                 $('.btn-fb-share').click(function (event) {
-                    //console.log(task);
                     shareImage($.parseJSON(data).fullpath);
                 });
                 $('.btn-fb-tw').click(function (event) {
-                    //console.log(task);
                     sharetw($.parseJSON(data).fullpath);
                 });
+                $('.btn-line-share').click(function (event) {
+                    shareLine($.parseJSON(data).fullpath);
+                });
+                $('.btn-save').click(function (event) {
+                    saveImage($.parseJSON(data).fullpath);
+                });
+
                 $.fancybox.close();
             });
         }
@@ -278,6 +280,18 @@
         function sharetw(b) {
             ga('send','event','Share','Twitter');
             var url = encodeURI('https://twitter.com/share?url='+b);
+            window.open(url,'_blank');
+        }
+
+        function shareLine(b){
+            ga('send','event','Share','Line');
+            var url = encodeURI('line://msg/text/LoveYouMom บอกรักแม่ได้ทุกวัน '+b);
+            window.open(url);
+        }
+
+        function saveImage(b){
+            ga('send','event','Save','Image');
+            var url = encodeURI(b);
             window.open(url,'_blank');
         }
     </script>
