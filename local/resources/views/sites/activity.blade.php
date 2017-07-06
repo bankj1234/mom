@@ -51,11 +51,19 @@
                         <div class="col-10"></div>
                     </div>
                     <div class="select-bike">
+                        <div class="carousel-left"><img src="{{ asset('assets/img/ico_prev-blue.png') }}"></div>
+                        <div class="carousel-right"><img src="{{ asset('assets/img/ico_next-blue.png') }}"></div>
+                        <div class="carousel-cont">
+                            <ul class="carousel">
                         <?php for ($i = 1; $i <= 6; $i++) { ?>
-                        <a style="display: inline-block;width: 25%;margin: 0 5px 0 5px;" class="item" href="javascript:void(0);" rel="<?php echo $i; ?>"><img
-                                    src="{{ asset('assets/img/frame',env('URL_SSL')) }}/frame<?php echo $i; ?>.png"
-                                    alt=""/></a>
+                            <li>
+                                <a class="item" href="javascript:void(0);" rel="<?php echo $i; ?>">
+                                    <img src="{{ asset('assets/img/frame',env('URL_SSL')) }}/frame<?php echo $i; ?>.png" data-caption="">
+                                </a>
+                            </li>
                         <?php } ?>
+                                </ul>
+                            </div>
                     </div>
                     <div class="btn-edit-img">
                         <div class="box-btn">
@@ -124,6 +132,18 @@
         image.width = 480;
         image.size = 600;
         image.style_index = 1;
+        if ($(window).width() < 420) {
+            var size_frame = "85";
+        }else{
+            var size_frame = "215";
+        }
+        slidebox({
+            container : ".carousel-cont",
+            leftTrigger : ".carousel-left",
+            rightTrigger : ".carousel-right",
+            speed : "fast",
+            length : size_frame
+        });
 
         $(document).ready(function () {
             fn_modifin_init();

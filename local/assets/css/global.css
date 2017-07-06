@@ -1080,9 +1080,38 @@ figure {
 
 .select-bike {
     position: relative;
-    padding: 0 20px;
+    padding: 0 20px;.
     box-sizing: border-box;
+    width: 647px;
+    margin:0 auto 0;
 }
+@media only screen and (max-width: 420px) {
+    .select-bike {
+        width:260px;
+        padding: 0 2px;
+    }
+    .item img{
+        width: 70px;
+    }
+    .carousel-left img{
+        width: 20px;
+    }
+    .carousel-right img{
+        width: 20px;
+    }
+    .carousel-left {
+        cursor: pointer;
+        top: 28%;
+        left: -20px;
+    }
+    .carousel-right {
+        cursor: pointer;
+        top: 28%;
+        right: -20px;
+    }
+}
+
+
 
 .select-bike .item {
     background: url("../img/bg_transparent.gif") 0 0 repeat;

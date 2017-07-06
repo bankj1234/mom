@@ -32,6 +32,10 @@ class SiteController extends Controller
         return view('sites/how-to-play');
     }
 
+    public function tc(){
+        return view('sites/tc');
+    }
+
     public function termsofuse(){
         return view('sites/terms-of-use');
     }

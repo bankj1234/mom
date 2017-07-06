@@ -14,6 +14,7 @@
 Route::get('/', 'SiteController@index');
 Route::get('activity', 'SiteController@activity');
 Route::get('how-to-play', 'SiteController@howtoplay');
+Route::get('tc', 'SiteController@tc');
 Route::post('image/upload', 'SiteController@uploadResult');
 
 Route::get('home', 'HomeController@index');
