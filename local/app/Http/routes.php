@@ -16,7 +16,11 @@ Route::get('activity', 'SiteController@activity');
 Route::get('how-to-play', 'SiteController@howtoplay');
 Route::get('tc', 'SiteController@tc');
 Route::post('image/upload', 'SiteController@uploadResult');
-
+Route::get('tc', 'SiteController@tc');
+Route::get('share/{id}', function ($id) {
+    $data['id'] = $id;
+    return view('sites/share',$data);
+});
 Route::get('home', 'HomeController@index');
 
 Route::controllers([

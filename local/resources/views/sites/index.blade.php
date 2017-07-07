@@ -19,7 +19,7 @@
             {{--<img src="{{ asset('assets/img/landing.png') }}" alt="">--}}
         </div>
         <div class="hero-text">
-            <img src="{{ asset('assets/img/landing_text2.png') }}" alt="">
+            <img src="{{ asset('assets/img/landing_text2.png',env('URL_SSL')) }}" alt="">
         </div>
         <div class="btn-group">
             <div class="main-btn">

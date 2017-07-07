@@ -46,13 +46,13 @@
                     </figure>
                     <div class="text-3 text-frame">
                         <div class="col-10"></div>
-                        <div class="col-80"><img class="img-text" src="{{ asset('assets/img/text3.png') }}" alt="">
+                        <div class="col-80"><img class="img-text" src="{{ asset('assets/img/text3.png',env('URL_SSL')) }}" alt="">
                         </div>
                         <div class="col-10"></div>
                     </div>
                     <div class="select-bike">
-                        <div class="carousel-left"><img src="{{ asset('assets/img/ico_prev-blue.png') }}"></div>
-                        <div class="carousel-right"><img src="{{ asset('assets/img/ico_next-blue.png') }}"></div>
+                        <div class="carousel-left"><img src="{{ asset('assets/img/ico_prev-blue.png',env('URL_SSL')) }}"></div>
+                        <div class="carousel-right"><img src="{{ asset('assets/img/ico_next-blue.png',env('URL_SSL')) }}"></div>
                         <div class="carousel-cont">
                             <ul class="carousel">
                         <?php for ($i = 1; $i <= 6; $i++) { ?>
@@ -75,7 +75,7 @@
                     <div class="box-header">
                         <div class="text-2">
                             <div class="col-10"></div>
-                            <div class="col-80"><img class="img-text" src="{{ asset('assets/img/result-header.png') }}"
+                            <div class="col-80"><img class="img-text" src="{{ asset('assets/img/result-header.png',env('URL_SSL')) }}"
                                                      alt=""></div>
                             <div class="col-10"></div>
                         </div>
@@ -86,7 +86,7 @@
                         <div class="text-2">
                             <div class="col-10"></div>
                             <div class="col-80"><img class="img-text"
-                                                     src="{{ asset('assets/img/result-text-share.png') }}"
+                                                     src="{{ asset('assets/img/result-text-share.png',env('URL_SSL')) }}"
                                                      alt=""></div>
                             <div class="col-10"></div>
                         </div>
@@ -258,13 +258,13 @@
                 $('.img-result').html('<img class="img-result" width="628px" height="auto" src="' + $.parseJSON(data).filename + '"/>');
                 //$('.btn-save').attr('href', '' + $.parseJSON(data).fullpath + '');
                 $('.btn-fb-share').click(function (event) {
-                    shareImage($.parseJSON(data).fullpath);
+                    shareImage($.parseJSON(data).pathname);
                 });
                 $('.btn-fb-tw').click(function (event) {
-                    sharetw($.parseJSON(data).fullpath);
+                    sharetw($.parseJSON(data).pathname);
                 });
                 $('.btn-line-share').click(function (event) {
-                    shareLine($.parseJSON(data).fullpath);
+                    shareLine($.parseJSON(data).pathname);
                 });
                 $('.btn-save').click(function (event) {
                     saveImage($.parseJSON(data).fullpath);
@@ -293,19 +293,19 @@
 
         function shareImage(b) {
             ga('send','event','Share','Facebook');
-            var url = encodeURI('http://www.facebook.com/sharer/sharer.php?u='+b);
+            var url = encodeURI('http://www.facebook.com/sharer/sharer.php?u=<?php echo env('URL_PD')?>/share/'+b);
             window.open(url,'_blank');
         }
 
         function sharetw(b) {
             ga('send','event','Share','Twitter');
-            var url = encodeURI('https://twitter.com/share?url='+b);
+            var url = encodeURI('https://twitter.com/share?url=<?php echo env('URL_PD')?>/share/'+b);
             window.open(url,'_blank');
         }
 
         function shareLine(b){
             ga('send','event','Share','Line');
-            var url = encodeURI('line://msg/text/LoveYouMom บอกรักแม่ได้ทุกวัน '+b);
+            var url = encodeURI('line://msg/text/LoveYouMom บอกรักแม่ได้ทุกวัน <?php echo env('URL_PD')?>/share/'+b);
             window.open(url);
         }
 
@@ -317,3 +317,5 @@
     </script>
 @endsection
 @section('footer')
+
+

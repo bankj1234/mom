@@ -88,6 +88,8 @@ class SiteController extends Controller
         $num = 11;
     }elseif($frameno == 4){
         $num = 10;
+    }else{
+        $num = 10;
     }
         for ($i = 1; $i <= $num; $i++) {
             $bg = Image::canvas(600, 600, '#5dc5d8');
@@ -139,6 +141,7 @@ class SiteController extends Controller
         }
         $results['filename'] = $file2;
         $results['fullpath'] = $baseURL.'/'.$file2;
+        $results['pathname'] = $imageFolderName;
         $results['status'] = 'Upload successfully';
         echo json_encode($results);
 
