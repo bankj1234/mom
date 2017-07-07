@@ -14,12 +14,12 @@
                                 </div>
                                 <div class="img-finish"></div>
                             </div>
-                            <img class="img_w" src="{{ asset('assets/img/img_space2.png',env('URL_SSL')) }}" alt="">
+                            <img class="img_w" src="{{ asset('assets/img/img_space2.png',env('URL_SSL',true)) }}" alt="">
                         </div>
                         <div class="box-btn box-btn-browse">
 						<span class="btn-browse btn-img-txt">
 							<input type="file" id="import_image" accept="image/*"/>
-							<span class="img"><img src="{{ asset('assets/img/btn-new-upload.png',env('URL_SSL')) }}"
+							<span class="img"><img src="{{ asset('assets/img/btn-new-upload.png',env('URL_SSL',true)) }}"
                                                    alt=""></span>
 						</span>
                         </div>
@@ -46,19 +46,19 @@
                     </figure>
                     <div class="text-3 text-frame">
                         <div class="col-10"></div>
-                        <div class="col-80"><img class="img-text" src="{{ asset('assets/img/text3.png',env('URL_SSL')) }}" alt="">
+                        <div class="col-80"><img class="img-text" src="{{ asset('assets/img/text3.png',env('URL_SSL',true)) }}" alt="">
                         </div>
                         <div class="col-10"></div>
                     </div>
                     <div class="select-bike">
-                        <div class="carousel-left"><img src="{{ asset('assets/img/ico_prev-blue.png',env('URL_SSL')) }}"></div>
-                        <div class="carousel-right"><img src="{{ asset('assets/img/ico_next-blue.png',env('URL_SSL')) }}"></div>
+                        <div class="carousel-left"><img src="{{ asset('assets/img/ico_prev-blue.png',env('URL_SSL',true)) }}"></div>
+                        <div class="carousel-right"><img src="{{ asset('assets/img/ico_next-blue.png',env('URL_SSL',true)) }}"></div>
                         <div class="carousel-cont">
                             <ul class="carousel">
                         <?php for ($i = 1; $i <= 6; $i++) { ?>
                             <li>
                                 <a class="item" href="javascript:void(0);" rel="<?php echo $i; ?>">
-                                    <img src="{{ asset('assets/img/frame',env('URL_SSL')) }}/frame<?php echo $i; ?>.png" data-caption="">
+                                    <img src="{{ asset('assets/img/frame',env('URL_SSL',true)) }}/frame<?php echo $i; ?>.png" data-caption="">
                                 </a>
                             </li>
                         <?php } ?>
@@ -75,38 +75,38 @@
                     <div class="box-header">
                         <div class="text-2">
                             <div class="col-10"></div>
-                            <div class="col-80"><img class="img-text" src="{{ asset('assets/img/result-header.png',env('URL_SSL')) }}"
+                            <div class="col-80"><img class="img-text" src="{{ asset('assets/img/result-header.png',env('URL_SSL',true)) }}"
                                                      alt=""></div>
                             <div class="col-10"></div>
                         </div>
                     </div>
-                    {{--<div class="box-header"><img class="text-result" src="{{ asset('assets/img/result-header.png',env('URL_SSL')) }}" alt=""></div>--}}
+                    {{--<div class="box-header"><img class="text-result" src="{{ asset('assets/img/result-header.png',env('URL_SSL',true)) }}" alt=""></div>--}}
                     <div class="img-result"></div>
                     <div class="box-share">
                         <div class="text-2">
                             <div class="col-10"></div>
                             <div class="col-80"><img class="img-text"
-                                                     src="{{ asset('assets/img/result-text-share.png',env('URL_SSL')) }}"
+                                                     src="{{ asset('assets/img/result-text-share.png',env('URL_SSL',true)) }}"
                                                      alt=""></div>
                             <div class="col-10"></div>
                         </div>
                     </div>
                     <div class="box-btn btn-finish-img">
                         <a class="btn-share btn-img-txt btn-fb-share" href="#">
-                            <span class="img-share"><img src="{{ asset('assets/img/btn-share-fb.png',env('URL_SSL')) }}"
+                            <span class="img-share"><img src="{{ asset('assets/img/btn-share-fb.png',env('URL_SSL',true)) }}"
                                                          alt=""></span>
                         </a>
                         <a class="btn-share btn-img-txt btn-line-share" href="#">
                             <span class="img-share"><img
-                                        src="{{ asset('assets/img/btn-share-line.png',env('URL_SSL')) }}" alt=""></span>
+                                        src="{{ asset('assets/img/btn-share-line.png',env('URL_SSL',true)) }}" alt=""></span>
                         </a>
                         <a class="btn-share btn-img-txt btn-fb-tw" href="#">
-                            <span class="img-share"><img src="{{ asset('assets/img/btn-share-tw.png',env('URL_SSL')) }}"
+                            <span class="img-share"><img src="{{ asset('assets/img/btn-share-tw.png',env('URL_SSL',true)) }}"
                                                          alt=""></span>
                         </a>
                         <a class="btn-share btn-img-txt btn-save" href="#">
                             <span class="img-share"><img
-                                        src="{{ asset('assets/img/btn-share-save.png',env('URL_SSL')) }}" alt=""></span>
+                                        src="{{ asset('assets/img/btn-share-save.png',env('URL_SSL',true)) }}" alt=""></span>
                         </a>
                     </div>
                     <div class="btn-group">

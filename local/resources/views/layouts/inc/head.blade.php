@@ -9,14 +9,14 @@
     <meta name="keywords" content="nestle">
     <meta name="author" content="SPK">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1">
-    <link rel="icon" type="image/png" href="{{ asset('/assets/img/favicon.png',env('URL_SSL')) }}"/>
-    <link href="{{ asset('/assets/js/crop/cropper.min.css',env('URL_SSL')) }}" rel="stylesheet"/>
-    <link href="{{ asset('/assets/css/style.css',env('URL_SSL')) }}" rel="stylesheet"/>
-    <link href="{{ asset('/assets/css/core/master.css',env('URL_SSL')) }}" rel="stylesheet"/>
-    <link href="{{ asset('/assets/js/fancybox/jquery.fancybox.css',env('URL_SSL')) }}" rel="stylesheet"/>
-    <script src="{{ asset('/assets/js/core/jquery.min.js',env('URL_SSL')) }}"></script>
+    <link rel="icon" type="image/png" href="{{ asset('/assets/img/favicon.png',env('URL_SSL',true)) }}"/>
+    <link href="{{ asset('/assets/js/crop/cropper.min.css',env('URL_SSL',true)) }}" rel="stylesheet"/>
+    <link href="{{ asset('/assets/css/style.css',env('URL_SSL',true)) }}" rel="stylesheet"/>
+    <link href="{{ asset('/assets/css/core/master.css',env('URL_SSL',true)) }}" rel="stylesheet"/>
+    <link href="{{ asset('/assets/js/fancybox/jquery.fancybox.css',env('URL_SSL',true)) }}" rel="stylesheet"/>
+    <script src="{{ asset('/assets/js/core/jquery.min.js',env('URL_SSL',true)) }}"></script>
     <!--[if lt IE 9]>
-    <script type="text/javascript" src="{{ asset('/assets/js/core/html5shiv.js',env('URL_SSL')) }}"></script>
+    <script type="text/javascript" src="{{ asset('/assets/js/core/html5shiv.js',env('URL_SSL',true)) }}"></script>
     <![endif]-->
 </head>
 <body>
@@ -33,7 +33,7 @@
         m.parentNode.insertBefore(a, m)
     })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-    ga('create', '{{ env('GA_ID') }}', 'auto');
+    ga('create', 'UA-33354168-14', 'auto');
     ga('send', 'pageview');
 </script>
 <div class="main-container">

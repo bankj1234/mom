@@ -13,7 +13,7 @@ return [
 	|
 	*/
 
-	'debug' => env('APP_DEBUG'),
+	'debug' => env('APP_DEBUG',false),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -26,7 +26,7 @@ return [
 	|
 	*/
 
-	'url' => env('URL_PD'),
+	'url' => env('URL_PD','https://www.bbnetworkgroup.com'),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -78,7 +78,7 @@ return [
 	|
 	*/
 
-	'key' => env('APP_KEY', 'SomeRandomString'),
+	'key' => env('APP_KEY', 'zVTS9POYMh3DSjpSndpfGDK88kxrth9b'),
 
 	'cipher' => MCRYPT_RIJNDAEL_128,
 
