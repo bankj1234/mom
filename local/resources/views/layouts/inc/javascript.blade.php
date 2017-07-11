@@ -19,12 +19,5 @@
     <!-- end popup loading -->
 </div>
 </div>
-<script src="{{ asset('assets/js/core/jquery.easing.js',env('URL_SSL',true)) }}"></script>
-<script src="{{ asset('assets/js/core/jquery.mousewheel.js',env('URL_SSL',true)) }}"></script>
-<script src="{{ asset('assets/js/core/detectmobilebrowser.js',env('URL_SSL',true)) }}"></script>
-<script src="{{ asset('assets/js/core/jquery.transit.min.js',env('URL_SSL',true)) }}"></script>
-<script src="{{ asset('assets/js/fancybox/jquery.fancybox.pack.js',env('URL_SSL',true)) }}"></script>
-<script src="{{ asset('assets/js/crop/cropper.min.js',env('URL_SSL',true)) }}"></script>
-<script src="{{ asset('assets/js/slidebox.min.js',env('URL_SSL',true)) }}"></script>
-<script src="{{ asset('assets/js/function.js',env('URL_SSL',true)) }}"></script>
+<script src="{{ asset('assets/js/main.min.js',env('URL_SSL',true)) }}"></script>
 
