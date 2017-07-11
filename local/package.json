@@ -3,5 +3,8 @@
   "devDependencies": {
     "gulp": "^3.8.8",
     "laravel-elixir": "*"
+  },
+  "dependencies": {
+    "uglify-js": "^3.0.24"
   }
 }

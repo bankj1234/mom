@@ -11,10 +11,8 @@
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1">
     <meta property="og:image" content="{{ asset('/assets/uploads',env('URL_SSL',true)) }}/{{$id}}/mom.gif">
     <meta property="og:url" content="{{ asset('/assets/uploads',env('URL_SSL',true)) }}/{{$id}}/mom.gif">
-    <link href="{{ asset('/assets/js/crop/cropper.min.css',env('URL_SSL',true)) }}" rel="stylesheet"/>
-    <link href="{{ asset('/assets/css/style.css',env('URL_SSL',true)) }}" rel="stylesheet"/>
+    <link href="{{ asset('/assets/css/vendor.css',env('URL_SSL',true)) }}" rel="stylesheet"/>
     <link href="{{ asset('/assets/css/core/master.css',env('URL_SSL',true)) }}" rel="stylesheet"/>
-    <link href="{{ asset('/assets/js/fancybox/jquery.fancybox.css',env('URL_SSL',true)) }}" rel="stylesheet"/>
     <script src="{{ asset('/assets/js/core/jquery.min.js',env('URL_SSL',true)) }}"></script>
     <!--[if lt IE 9]>
     <script type="text/javascript" src="{{ asset('/assets/js/core/html5shiv.js',env('URL_SSL',true)) }}"></script>
@@ -65,14 +63,7 @@
     <!-- end popup loading -->
 </div>
 </div>
-<script src="{{ asset('assets/js/core/jquery.easing.js',env('URL_SSL',true)) }}"></script>
-<script src="{{ asset('assets/js/core/jquery.mousewheel.js',env('URL_SSL',true)) }}"></script>
-<script src="{{ asset('assets/js/core/detectmobilebrowser.js',env('URL_SSL',true)) }}"></script>
-<script src="{{ asset('assets/js/core/jquery.transit.min.js',env('URL_SSL',true)) }}"></script>
-<script src="{{ asset('assets/js/fancybox/jquery.fancybox.pack.js',env('URL_SSL',true)) }}"></script>
-<script src="{{ asset('assets/js/crop/cropper.min.js',env('URL_SSL',true)) }}"></script>
-<script src="{{ asset('assets/js/slidebox.min.js',env('URL_SSL',true)) }}"></script>
-<script src="{{ asset('assets/js/function.js',env('URL_SSL',true)) }}"></script>
+<script src="{{ asset('assets/js/main.min.js',env('URL_SSL',true)) }}"></script>
 
 </body>
 </html>

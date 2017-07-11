@@ -134,6 +134,8 @@
         image.style_index = 1;
         if ($(window).width() < 420) {
             var size_frame = "85";
+        }else if($(window).width() < 760 && $(window).width() >= 420){
+            var size_frame = "117";
         }else{
             var size_frame = "215";
         }

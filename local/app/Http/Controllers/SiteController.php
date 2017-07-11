@@ -42,7 +42,7 @@ class SiteController extends Controller
 
     public function uploadResult(Request $request)
     {
-        $baseURL = env('URL_PD','https://www.bbnetworkgroup.com');
+        $baseURL = env('URL_PD','https://stag.lovemomcard.in.th');
         $frameno = $request->frame;
         $text = $request->text;
         $text = trim(strip_tags($text));
