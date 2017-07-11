@@ -293,19 +293,19 @@
 
         function shareImage(b) {
             ga('send','event','Share','Facebook');
-            var url = encodeURI('http://www.facebook.com/sharer/sharer.php?u=<?php echo env('URL_PD')?>/share/'+b);
+            var url = encodeURI('http://www.facebook.com/sharer/sharer.php?u=<?php echo env('URL_PD','https://www.bbnetworkgroup.com')?>/share/'+b);
             window.open(url,'_blank');
         }
 
         function sharetw(b) {
             ga('send','event','Share','Twitter');
-            var url = encodeURI('https://twitter.com/share?url=<?php echo env('URL_PD')?>/share/'+b);
+            var url = encodeURI('https://twitter.com/share?url=<?php echo env('URL_PD','https://www.bbnetworkgroup.com')?>/share/'+b);
             window.open(url,'_blank');
         }
 
         function shareLine(b){
             ga('send','event','Share','Line');
-            var url = encodeURI('line://msg/text/LoveYouMom บอกรักแม่ได้ทุกวัน <?php echo env('URL_PD')?>/share/'+b);
+            var url = encodeURI('line://msg/text/LoveYouMom บอกรักแม่ได้ทุกวัน <?php echo env('URL_PD','https://www.bbnetworkgroup.com')?>/share/'+b);
             window.open(url);
         }
 
