@@ -15,6 +15,7 @@ class SiteController extends Controller
     {
         header_remove('x-powered-by');
         header_remove('server');
+        header("X-Content-Type-Options: nosniff");
         $this->middleware('guest');
     }
 
