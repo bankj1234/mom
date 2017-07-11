@@ -36,7 +36,31 @@ class Handler extends ExceptionHandler {
 	 */
 	public function render($request, Exception $e)
 	{
-		return parent::render($request, $e);
+        if($this->isHttpException($e))
+        {
+            switch ($e->getStatusCode())
+            {
+                // not found
+                case 404:
+                    return redirect()->guest('/');
+                    break;
+
+                // internal error
+                case '500':
+                    return redirect()->guest('/');
+                    break;
+
+                default:
+                    header("X-Content-Type-Options: nosniff");
+                    return $this->renderHttpException($e);
+                    break;
+            }
+        }
+        else
+        {
+            header("X-Content-Type-Options: nosniff");
+            return parent::render($request, $e);
+        }
 	}
 
 }
