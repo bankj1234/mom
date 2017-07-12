@@ -18,7 +18,7 @@
                         </div>
                         <div class="box-btn box-btn-browse">
 						<span class="btn-browse btn-img-txt">
-							<input type="file" id="import_image" accept="image/*"/>
+							<input type="file" id="import_image" accept="image/x-png,image/jpeg"/>
 							<span class="img"><img src="{{ asset('assets/img/btn-new-upload.png',env('URL_SSL',true)) }}"
                                                    alt=""></span>
 						</span>
@@ -296,12 +296,13 @@
         function shareImage(b) {
             ga('send','event','Share','Facebook');
 
-            var url = encodeURI('http://www.facebook.com/sharer/sharer.php?u=<?php echo env('URL_PD','https://stag.lovemomcard.in.th')?>/share/'+b);
+            var url = encodeURI('<?php echo env('URL_PD','https://stag.lovemomcard.in.th')?>/share/'+b);
 
             FB.ui({
                 method: 'share',
                 href: url,
-                hashtag: '#TestHash1'
+                hashtag: '#LoveMomClub',
+                mobile_iframe:true
             }, function(response){});
 
             //window.open(url,'_blank');

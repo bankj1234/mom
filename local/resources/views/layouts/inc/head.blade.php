@@ -25,6 +25,7 @@
     <!-- End Google Tag Manager -->
 </head>
 <body>
+<div id="fb-root"></div>
 <script>
     window.fbAsyncInit = function() {
         FB.init({
@@ -59,5 +60,4 @@
     ga('create', 'UA-33354168-14', 'auto');
     ga('send', 'pageview');
 </script>
-<div id="fb-root"></div>
 <div class="main-container">

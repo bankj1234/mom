@@ -1,3 +1,50 @@
+
+FileETag None
+SetEnv TZ Asia/Bangkok
+
+# use utf-8 encoding for anything served text/plain or text/html
+AddDefaultCharset utf-8
+# force utf-8 for a number of file formats
+AddCharset utf-8 .html .css .js .xml .json .rss
+
+AddType font/ttf ttf
+AddType application/octet-stream woff
+AddType application/octet-stream woff2
+AddType application/vnd.ms-fontobject eot
+AddType image/png png
+AddType image/jpeg jpg
+AddType image/jpeg jpeg
+AddType video/ogg ogv
+AddType video/mp4 mp4
+AddType video/x-ms-wmv wmv
+
+# gzip compression.
+<IfModule mod_deflate.c>
+# html, xml, css, and js:
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css application/x-javascript text/javascript application/javascript application/json
+
+# webfonts and svg:
+  <FilesMatch "\.(woff|ttf|otf|eot|svg)$" >
+    SetOutputFilter DEFLATE
+  </FilesMatch>
+</IfModule>
+
+<IfModule mod_headers.c>
+	Header set X-XSS-Protection "1; mode=block"
+	Header set X-Frame-Options SAMEORIGIN
+	Header set X-Content-Type-Options: "nosniff"
+		<FilesMatch "\.(woff|eot)$">
+    	    Header unset Vary
+    	    Header unset Pragma
+    	    Header set Cache-Control "public"
+    	</FilesMatch>
+</IfModule>
+
+RedirectMatch 404 ^/css/$
+RedirectMatch 404 ^/assets/$
+RedirectMatch 404 ^/images/$
+RedirectMatch 404 ^/thai-dic/$
+
 <IfModule mod_rewrite.c>
     <IfModule mod_negotiation.c>
         Options -MultiViews
@@ -13,7 +60,4 @@
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
-</IfModule>
-<IfModule mod_headers.c>
-    Header set X-Content-Type-Options "nosniff"
 </IfModule>
