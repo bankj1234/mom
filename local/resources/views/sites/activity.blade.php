@@ -248,7 +248,7 @@
             var input = document.getElementById("msgTxt");
             $.ajax({
                 type: "POST",
-                url: "@if(env('APP_ENV') == 'prod'){{ secure_url('image/upload') }}@else{{ url('image/upload') }}@endif",
+                url: "{{ secure_url('image/upload') }}",
                 data: {
                     'image': dataURL,
                     "_token": token,
@@ -301,7 +301,7 @@
             FB.ui({
                 method: 'share',
                 href: url,
-                hashtag: '#LoveMomClub',
+//                hashtag: '#LoveMomClub',
                 mobile_iframe:true
             }, function(response){});
 

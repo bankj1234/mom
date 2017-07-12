@@ -47,6 +47,7 @@ class SiteController extends Controller
         $frameno = $request->frame;
         $text = $request->text;
         $text = trim(strip_tags($text));
+        $text = $text.' ';
         $img = $request->image;
         $img = preg_replace('#data:image/[^;]+;base64,#', '', $img);
         $img = str_replace(' ', '+', $img);

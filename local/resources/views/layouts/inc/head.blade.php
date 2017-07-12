@@ -9,7 +9,7 @@
     <meta name="keywords" content="nestle">
     <meta name="author" content="SPK">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1">
-    <link rel="icon" type="image/png" href="{{ asset('/assets/img/favicon.png',env('URL_SSL',true)) }}"/>
+    <link rel="icon" type="image/png" href="{{ asset('/assets/img/favicon.ico',env('URL_SSL',true)) }}"/>
     <link href="{{ asset('/assets/css/vendor.css',env('URL_SSL',true)) }}" rel="stylesheet"/>
     <link href="{{ asset('/assets/css/core/master.css',env('URL_SSL',true)) }}" rel="stylesheet"/>
     <script src="{{ asset('/assets/js/core/jquery.min.js',env('URL_SSL',true)) }}"></script>

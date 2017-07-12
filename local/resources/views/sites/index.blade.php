@@ -23,8 +23,8 @@
         </div>
         <div class="btn-group">
             <div class="main-btn">
-                <a class="btn-landing-start" href="{{ url('activity') }}"></a>
-                <a class="btn-landing-howto" href="{{ url('how-to-play') }}"></a>
+                <a class="btn-landing-start" href="{{ secure_url('activity') }}"></a>
+                <a class="btn-landing-howto" href="{{ secure_url('how-to-play') }}"></a>
             </div>
         </div>
     </div>
