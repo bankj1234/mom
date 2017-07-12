@@ -18,7 +18,7 @@
                         </div>
                         <div class="box-btn box-btn-browse">
 						<span class="btn-browse btn-img-txt">
-							<input type="file" id="import_image" accept="image/*"/>
+							<input type="file" id="import_image" accept="image/x-png,image/jpeg"/>
 							<span class="img"><img src="{{ asset('assets/img/btn-new-upload.png',env('URL_SSL',true)) }}"
                                                    alt=""></span>
 						</span>
