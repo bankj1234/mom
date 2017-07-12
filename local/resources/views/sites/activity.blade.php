@@ -296,7 +296,12 @@
         function shareImage(b) {
             ga('send','event','Share','Facebook');
             var url = encodeURI('http://www.facebook.com/sharer/sharer.php?u=<?php echo env('URL_PD','https://www.bbnetworkgroup.com')?>/share/'+b);
-            window.open(url,'_blank');
+            FB.ui({
+                method: 'share',
+                href: url,
+                hashtag: '#TestHash1'
+            }, function(response){});
+            //window.open(url,'_blank');
         }
 
         function sharetw(b) {
