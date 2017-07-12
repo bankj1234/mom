@@ -3,7 +3,6 @@
     </a>
 </footer>
 <div style="display:none;">
-    <!-- popup loading-->
     <div class="popup-loading" id="popup-loading">
         <div class="popup-inner">
             <div class="box-loading">
@@ -16,7 +15,6 @@
             </div>
         </div>
     </div>
-    <!-- end popup loading -->
 </div>
 </div>
 <script src="{{ asset('assets/js/main.min.js',env('URL_SSL',true)) }}"></script>
