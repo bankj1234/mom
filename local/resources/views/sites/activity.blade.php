@@ -295,11 +295,12 @@
 
         function shareImage(b) {
             ga('send','event','Share','Facebook');
-            var url = encodeURI('http://www.facebook.com/sharer/sharer.php?u=<?php echo env('URL_PD','https://www.bbnetworkgroup.com')?>/share/'+b);
+            var url = encodeURI('<?php echo env('URL_PD','https://www.bbnetworkgroup.com')?>/share/'+b);
             FB.ui({
                 method: 'share',
                 href: url,
-                hashtag: '#TestHash1'
+                hashtag: '#LoveYouMom',
+                mobile_iframe: true,
             }, function(response){});
             //window.open(url,'_blank');
         }
