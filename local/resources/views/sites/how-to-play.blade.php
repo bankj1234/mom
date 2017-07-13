@@ -6,7 +6,7 @@
         <div class="container">
             <div class="row">
                 <section class="txtC">
-                    <img class="how-to-play-img" src="{{ asset('assets/img/how-to-play2.png')}}" alt="">
+                    <img class="how-to-play-img" src="{{ asset('assets/img/how-to-play2.png',env('URL_SSL',true))}}" alt="">
                 </section>
             </div>
         </div>
