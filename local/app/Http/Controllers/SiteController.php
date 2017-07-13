@@ -24,10 +24,10 @@ class SiteController extends Controller
         if(env('APP_ENV' )){
             return view('sites/index');
         }else{
-            if ($request->server('HTTP_X_FORWARDED_PROTO') == 'http') {
-                return redirect('https://stag.lovemomcard.in.th');
-            }else{
+            if ($request->server('HTTP_CONNECTION') == 'upgrade') {
                 return view('sites/index');
+            }else{
+                return redirect('https://stag.lovemomcard.in.th');
             }
         }
 
