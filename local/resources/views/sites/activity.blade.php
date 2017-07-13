@@ -31,7 +31,7 @@
                     <figure class="box-mdf-img">
                         <div class="text-2 text-msg">
                             <div class="col-10"></div>
-                            <div class="col-80"><img class="img-text" src="{{ asset('assets/img/text2.png') }}" alt="">
+                            <div class="col-80"><img class="img-text" src="{{ asset('assets/img/text2.png',env('URL_SSL',true)) }}" alt="">
                             </div>
                             <div class="col-10"></div>
                         </div>
