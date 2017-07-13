@@ -19,9 +19,18 @@ class SiteController extends Controller
         $this->middleware('guest');
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        return view('sites/index');
+        if(env('APP_ENV' )){
+            return view('sites/index');
+        }else{
+            if ($request->server('HTTP_X_FORWARDED_PROTO') == 'http') {
+                return redirect('https://stag.lovemomcard.in.th');
+            }else{
+                return view('sites/index');
+            }
+        }
+
     }
 
     public function activity()
