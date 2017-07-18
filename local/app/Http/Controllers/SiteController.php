@@ -7,9 +7,8 @@ use Image;
 use PhlongTaIam\WordBreaker as WordBreaker;
 class SiteController extends Controller
 {
-
-    var $word1 = '';
     var $word2 = '';
+    var $BaseURL = 'https://www.bbnetworkgroup.com';
 
     public function __construct()
     {
@@ -25,12 +24,11 @@ class SiteController extends Controller
             return view('sites/index');
         }else{
             if ($request->server('HTTP_X_FORWARDED_PROTO') == 'http') {
-                return redirect('https://www.bbnetworkgroup.com');
+                return redirect($this->BaseURL);
             }else{
                 return view('sites/index');
             }
         }
-
     }
 
     public function activity()
@@ -52,7 +50,7 @@ class SiteController extends Controller
 
     public function uploadResult(Request $request)
     {
-        $baseURL = env('URL_PD','https://www.bbnetworkgroup.com');
+        $baseURL = env('URL_PD',$this->BaseURL);
         $frameno = $request->frame;
         $text = $request->text;
         $text = trim(strip_tags($text));
