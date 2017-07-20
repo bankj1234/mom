@@ -4,12 +4,17 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="apple-mobile-web-app-capable" content="yes"/>
-    <title>Nestle Mom</title>
-    <meta name="description" content="">
-    <meta name="keywords" content="nestle">
+    <title>Nestle Mom Card</title>
+    <meta name="description" content="บอกรักคุณแม่ได้ทุกวัน">
+    <meta name="keywords" content="nestle,LoveYouMom,LoveMomCard,บอกรักคุณแม่ได้ทุกวัน">
     <meta name="author" content="SPK">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1">
+    <meta property="fb:app_id" content="1468128819961218">
     <meta property="og:image" content="{{ asset('/assets/uploads',env('URL_SSL',true)) }}/{{$id}}/mom.gif">
+    <meta property="og:image:width" content="600">
+    <meta property="og:image:height" content="600">
+    <meta property="og:title" content="Nestle Mom Card">
+    <meta property="og:description" content="บอกรักคุณแม่ได้ทุกวัน">
     <meta property="og:url" content="{{ asset('/assets/uploads',env('URL_SSL',true)) }}/{{$id}}/mom.gif">
     <link href="{{ asset('/assets/css/vendor.css',env('URL_SSL',true)) }}" rel="stylesheet"/>
     <link href="{{ asset('/assets/css/core/master.css',env('URL_SSL',true)) }}" rel="stylesheet"/>
