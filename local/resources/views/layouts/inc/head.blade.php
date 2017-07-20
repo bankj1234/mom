@@ -56,8 +56,12 @@
         a.src = g;
         m.parentNode.insertBefore(a, m)
     })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-
     ga('create', 'UA-33354168-14', 'auto');
     ga('send', 'pageview');
+    (function (window) {
+        if (window.location !== window.top.location){
+            window.top.location = window.location;
+        }
+    })(this);
 </script>
 <div class="main-container">
