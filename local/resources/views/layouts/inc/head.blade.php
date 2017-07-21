@@ -16,6 +16,15 @@
     <!--[if lt IE 9]>
     <script type="text/javascript" src="{{ asset('/assets/js/core/html5shiv.js',env('URL_SSL',true)) }}"></script>
     <![endif]-->
+    <style id="antiClickjack">body{display:none !important;}</style>
+    <script type="text/javascript">
+        if (self === top) {
+            var antiClickjack = document.getElementById("antiClickjack");
+            antiClickjack.parentNode.removeChild(antiClickjack);
+        } else {
+            top.location = self.location;
+        }
+    </script>
 </head>
 <body>
 <script>
@@ -27,7 +36,6 @@
         });
         FB.AppEvents.logPageView();
     };
-
     (function(d, s, id){
         var js, fjs = d.getElementsByTagName(s)[0];
         if (d.getElementById(id)) {return;}
