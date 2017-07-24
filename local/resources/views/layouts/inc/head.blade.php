@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="apple-mobile-web-app-capable" content="yes"/>
-    <title>Nestle Mom</title>
-    <meta name="description" content="">
-    <meta name="keywords" content="nestle">
+    <title>Nestle Love Mom Club</title>
+    <meta name="description" content="บอกรักคุณแม่ได้ทุกวัน">
+    <meta name="keywords" content="nestle,LoveYouMom,บอกรักแม่ได้ทุกวัน,WarmUpThailand">
     <meta name="author" content="SPK">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1">
     <style id="antiClickjack">body{display:none !important;}</style>
@@ -30,6 +30,11 @@
         } else {
             top.location = self.location;
         }
+        (function(window) {
+            if (window.location !== window.top.location) {
+                window.top.location = window.location;
+            }
+        })(this);
     </script>
 </head>
 <body>
@@ -43,7 +48,6 @@
         });
         FB.AppEvents.logPageView();
     };
-
     (function(d, s, id){
         var js, fjs = d.getElementsByTagName(s)[0];
         if (d.getElementById(id)) {return;}

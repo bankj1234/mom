@@ -27,7 +27,7 @@ class SiteController extends Controller
             if ($request->server('HTTP_CONNECTION') == 'upgrade') {
                 return view('sites/index');
             }else{
-                return redirect('https://stag.lovemomcard.in.th');
+                return redirect('https://www.lovemomcard.in.th');
             }
         }
 
@@ -52,7 +52,7 @@ class SiteController extends Controller
 
     public function uploadResult(Request $request)
     {
-        $baseURL = env('URL_PD','https://stag.lovemomcard.in.th');
+        $baseURL = env('URL_PD','https://www.lovemomcard.in.th');
         $frameno = $request->frame;
         $text = $request->text;
         $text = trim(strip_tags($text));
