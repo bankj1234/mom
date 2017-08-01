@@ -24,11 +24,11 @@ class SiteController extends Controller
         if(env('APP_ENV' )){
             return view('sites/index');
         }else{
-            if ($request->server('HTTP_CONNECTION') == 'upgrade') {
+//            if ($request->server('HTTP_CONNECTION') == 'upgrade') {
                 return view('sites/index');
-            }else{
-                return redirect('https://www.lovemomcard.in.th');
-            }
+//            }else{
+//                return redirect('https://www.lovemomcard.in.th');
+//            }
         }
 
     }

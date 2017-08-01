@@ -299,7 +299,7 @@
                 method: 'share',
                 href: url,
                 hashtag: '#LoveMomClub',
-                mobile_iframe:true
+                mobile_iframe:false
             }, function(response){});
             ga('send','event','Share','Facebook');
             //window.open(url,'_blank');
