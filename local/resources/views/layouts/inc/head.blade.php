@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="apple-mobile-web-app-capable" content="yes"/>
-    <title>Nestle Mom</title>
-    <meta name="description" content="">
-    <meta name="keywords" content="nestle">
+    <title>Nestle : Love You Mom</title>
+    <meta name="description" content="บอกรักคุณแม่ได้ทุกวัน">
+    <meta name="keywords" content="nestle,บอกรักคุณแม่ได้ทุกวัน,loveyoumom,warmupthailand">
     <meta name="author" content="SPK">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1">
     <link rel="icon" type="image/png" href="{{ asset('/assets/img/favicon.png',env('URL_SSL',true)) }}"/>

@@ -300,20 +300,20 @@
                 method: 'share',
                 href: url,
                 hashtag: '#LoveYouMom',
-                mobile_iframe: true,
+                mobile_iframe: false,
             }, function(response){});
-            //window.open(url,'_blank');
         }
 
         function sharetw(b) {
             ga('send','event','Share','Twitter');
-            var url = encodeURI('https://twitter.com/share?url=<?php echo env('URL_PD','https://www.bbnetworkgroup.com')?>/share/'+b);
+            var path_img = '<?php echo env('URL_PD','https://www.bbnetworkgroup.com')?>/share/'+b;
+            var url = 'https://twitter.com/share?url='+encodeURIComponent(path_img)+'&text='+encodeURIComponent('การ์ดสุดพิเศษนี้แด่แม่')+'&hashtags=LoveYouMom';
             window.open(url,'_blank');
         }
 
         function shareLine(b){
             ga('send','event','Share','Line');
-            var url = encodeURI('line://msg/text/LoveYouMom บอกรักแม่ได้ทุกวัน <?php echo env('URL_PD','https://www.bbnetworkgroup.com')?>/share/'+b);
+            var url = encodeURI('line://msg/text/การ์ดสุดพิเศษนี้แด่แม่ <?php echo env('URL_PD','https://www.bbnetworkgroup.com')?>/share/'+b);
             window.open(url);
         }
 
