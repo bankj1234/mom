@@ -167,7 +167,6 @@
             $('#import_image').on('change', function () {
                 readFile(this);
             });
-
         });
         function fn_modifin_init() {
             $('.mdf-img .img').html(image.style_path);
