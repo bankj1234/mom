@@ -214,8 +214,11 @@
         }
 
         function fn_save_img() {
+
         }
+
         function fn_share_img() {
+
         }
 
         function crop_init() {
