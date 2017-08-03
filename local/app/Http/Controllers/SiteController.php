@@ -8,7 +8,7 @@ use PhlongTaIam\WordBreaker as WordBreaker;
 class SiteController extends Controller
 {
     var $word2 = '';
-    var $BaseURL = 'https://www.bbnetworkgroup.com';
+    var $BaseURL = 'https://www.lovemomcard.in.th';
 
     public function __construct()
     {
@@ -26,7 +26,7 @@ class SiteController extends Controller
             if ($request->server('HTTP_CONNECTION') == 'upgrade') {
                 return view('sites/index');
             }else{
-                return redirect('https://stag.lovemomcard.in.th');
+                return redirect('https://www.lovemomcard.in.th');
             }
         }
 

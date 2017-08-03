@@ -295,7 +295,7 @@
 
         function shareImage(b) {
             ga('send','event','Share','Facebook');
-            var url = encodeURI('<?php echo env('URL_PD','https://stag.lovemomcard.in.th')?>/share/'+b);
+            var url = encodeURI('<?php echo env('URL_PD','https://www.lovemomcard.in.th')?>/share/'+b);
             FB.ui({
                 method: 'share',
                 href: url,
@@ -306,14 +306,14 @@
 
         function sharetw(b) {
             ga('send','event','Share','Twitter');
-            var path_img = '<?php echo env('URL_PD','https://stag.lovemomcard.in.th')?>/share/'+b;
+            var path_img = '<?php echo env('URL_PD','https://www.lovemomcard.in.th')?>/share/'+b;
             var url = 'https://twitter.com/share?url='+encodeURIComponent(path_img)+'&text='+encodeURIComponent('การ์ดสุดพิเศษนี้แด่แม่')+'&hashtags=LoveYouMom';
             window.open(url,'_blank');
         }
 
         function shareLine(b){
             ga('send','event','Share','Line');
-            var url = encodeURI('line://msg/text/การ์ดสุดพิเศษนี้แด่แม่ <?php echo env('URL_PD','https://stag.lovemomcard.in.th')?>/share/'+b);
+            var url = encodeURI('line://msg/text/การ์ดสุดพิเศษนี้แด่แม่ <?php echo env('URL_PD','https://www.lovemomcard.in.th')?>/share/'+b);
             window.open(url);
         }
 

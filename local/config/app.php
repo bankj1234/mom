@@ -26,7 +26,7 @@ return [
 	|
 	*/
 
-	'url' => env('URL_PD','https://www.bbnetworkgroup.com'),
+	'url' => env('URL_PD','https://www.lovemomcard.in.th'),
 
 	/*
 	|--------------------------------------------------------------------------
