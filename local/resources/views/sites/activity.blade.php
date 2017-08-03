@@ -104,7 +104,7 @@
                             <span class="img-share"><img src="{{ asset('assets/img/btn-share-tw.png',env('URL_SSL',true)) }}"
                                                          alt=""></span>
                         </a>
-                        <a class="btn-share btn-img-txt btn-save" href="#">
+                        <a  id="social-save" class="btn-share btn-img-txt btn-save" download="lovemomcard.gif" href="#" title="ImageName" onclick="Javascript:saveImage();">
                             <span class="img-share"><img
                                         src="{{ asset('assets/img/btn-share-save.png',env('URL_SSL',true)) }}" alt=""></span>
                         </a>
@@ -267,7 +267,7 @@
             }).done(function (data) {
                 step_2();
                 $('.img-result').html('<img class="img-result" width="628px" height="auto" src="' + $.parseJSON(data).filename + '"/>');
-                //$('.btn-save').attr('href', '' + $.parseJSON(data).fullpath + '');
+                $('#social-save').attr('href', '' + $.parseJSON(data).fullpath + '');
                 $('.btn-fb-share').click(function (event) {
                     shareImage($.parseJSON(data).pathname);
                 });
@@ -277,9 +277,9 @@
                 $('.btn-line-share').click(function (event) {
                     shareLine($.parseJSON(data).pathname);
                 });
-                $('.btn-save').click(function (event) {
-                    saveImage($.parseJSON(data).fullpath);
-                });
+//                $('.btn-save').click(function (event) {
+//                    saveImage($.parseJSON(data).fullpath);
+//                });
 
                 $.fancybox.close();
             });
@@ -326,19 +326,16 @@
             window.open(url);
         }
 
-        function saveImage(b){
+        function saveImage(){
             ga('send','event','Save','Image');
-
-            window.open(canvas.toDataURL('image/gif'));
-            var gh = canvas.toDataURL('gif');
-
-            var a  = document.createElement('a');
-            a.href = gh;
-            a.download = b;
-
-            a.click()
-
-
+//            window.open(canvas.toDataURL('image/gif'));
+//            var gh = canvas.toDataURL('gif');
+//
+//            var a  = document.createElement('a');
+//            a.href = gh;
+//            a.download = b;
+//
+//            a.click()
             //var url = encodeURI(b);
             //window.open(url,'_blank');
         }
