@@ -7,9 +7,8 @@ use Image;
 use PhlongTaIam\WordBreaker as WordBreaker;
 class SiteController extends Controller
 {
-
-    var $word1 = '';
     var $word2 = '';
+    var $BaseURL = 'https://www.bbnetworkgroup.com';
 
     public function __construct()
     {
@@ -52,7 +51,7 @@ class SiteController extends Controller
 
     public function uploadResult(Request $request)
     {
-        $baseURL = env('URL_PD','https://stag.lovemomcard.in.th');
+        $baseURL = env('URL_PD',$this->BaseURL);
         $frameno = $request->frame;
         $text = $request->text;
         $text = trim(strip_tags($text));
@@ -74,7 +73,7 @@ class SiteController extends Controller
         foreach ($wordBreaker->breakIntoWords($text) as $in => $w) {
             $omg1 = $this->word2 . '' . $w;
             $len = $this->getStrLenTH($omg1);
-            if ($len > 20) {
+            if ($len > 25) {
                 if (($in + 1) == $countWord) {
                     $wordar[] = $this->word2;
                     $wordar[] = $w;
@@ -91,17 +90,9 @@ class SiteController extends Controller
                 }
             }
         }
-    if($frameno == 1){
-         $num = 10;
-    }elseif($frameno == 2){
+
         $num = 10;
-    }elseif($frameno == 3){
-        $num = 11;
-    }elseif($frameno == 4){
-        $num = 10;
-    }else{
-        $num = 10;
-    }
+
         for ($i = 1; $i <= $num; $i++) {
             $bg = Image::canvas(600, 600, '#5dc5d8');
             $photo = Image::make($file);
@@ -112,25 +103,25 @@ class SiteController extends Controller
             $bg->insert($frame,'top-left', 0, 0);
             foreach($wordar as $key => $wordin){
                 if($key == 0){
-                    $bg->text($wordin, 300, 355, function($font) {
-                        $font->file('./assets/css/fonts/KittithadaLight45.ttf');
-                        $font->size(70);
+                    $bg->text($wordin, 300, 395, function($font) {
+                        $font->file('./assets/css/fonts/rsu-light.ttf');
+                        $font->size(40);
                         $font->color('#FFFFFF');
                         $font->align('center');
                         $font->valign('top');
                     });
                 }elseif($key == 1){
-                    $bg->text($wordin, 300, 418, function($font) {
-                        $font->file('./assets/css/fonts/KittithadaLight45.ttf');
-                        $font->size(70);
+                    $bg->text($wordin, 300, 450, function($font) {
+                        $font->file('./assets/css/fonts/rsu-light.ttf');
+                        $font->size(40);
                         $font->color('#FFFFFF');
                         $font->align('center');
                         $font->valign('top');
                     });
                 }else{
-                    $bg->text($wordin, 300, 481, function($font) {
-                        $font->file('./assets/css/fonts/KittithadaLight45.ttf');
-                        $font->size(70);
+                    $bg->text($wordin, 300, 505, function($font) {
+                        $font->file('./assets/css/fonts/rsu-light.ttf');
+                        $font->size(40);
                         $font->color('#FFFFFF');
                         $font->align('center');
                         $font->valign('top');
@@ -142,11 +133,11 @@ class SiteController extends Controller
                     $bg->save('./assets/uploads/img/'.$randimg.'.png',100);
                 }
             }
-            $bg->save($filePath.'/'.$i.'.png',30);
+            $bg->save($filePath.'/'.$i.'.png',100);
             $file1 .= 'assets/uploads/' . $imageFolderName . '/'.$i.'.png ';
         }
         $file2 = "assets/uploads/$imageFolderName/mom.gif";
-        exec("convert -delay 0.01 -loop 0 $file1 $file2");
+        exec("convert -delay 10 -loop 0 $file1 $file2");
         for ($i = 1; $i <= 10; $i++) {
             unlink($filePath.'/'.$i.'.png');
         }
@@ -155,7 +146,6 @@ class SiteController extends Controller
         $results['pathname'] = $imageFolderName;
         $results['status'] = 'Upload successfully';
         echo json_encode($results);
-
     }
 
     // Get string length for Character Thai

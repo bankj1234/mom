@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="apple-mobile-web-app-capable" content="yes"/>
-    <title>Nestle Mom</title>
-    <meta name="description" content="">
-    <meta name="keywords" content="nestle">
+    <title>Nestle : Love You Mom</title>
+    <meta name="description" content="บอกรักคุณแม่ได้ทุกวัน">
+    <meta name="keywords" content="nestle,บอกรักคุณแม่ได้ทุกวัน,loveyoumom,warmupthailand">
     <meta name="author" content="SPK">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1">
     <style id="antiClickjack">body{display:none !important;}</style>
@@ -17,7 +17,6 @@
     <!--[if lt IE 9]>
     <script type="text/javascript" src="{{ asset('/assets/js/core/html5shiv.js',env('URL_SSL',true)) }}"></script>
     <![endif]-->
-
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
             new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
             j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
@@ -44,6 +43,23 @@
         FB.AppEvents.logPageView();
     };
 
+    (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+<script>
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId      : '141315993114757',
+            xfbml      : true,
+            version    : 'v2.9'
+        });
+        FB.AppEvents.logPageView();
+    };
     (function(d, s, id){
         var js, fjs = d.getElementsByTagName(s)[0];
         if (d.getElementById(id)) {return;}
