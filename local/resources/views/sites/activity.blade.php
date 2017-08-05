@@ -6,32 +6,87 @@
         <div class="container txtC">
             <div class="row">
                 <section class="section-select" id="step_1">
+                    <div class="text-3 text-frame">
+                        <div class="col-10"></div>
+                        <div class="col-80"><img class="img-text"
+                                                 src="{{ asset('assets/img/text3.png',env('URL_SSL',true)) }}" alt="">
+                        </div>
+                        <div class="col-10"></div>
+                    </div>
+                    <div class="select-bike">
+                        <div class="col-10"></div>
+                        <div class="col-80">
+                            <?php for ($i = 1; $i <= 6; $i++) { ?>
+                            <a style="width: 32%;display: inline;float:left;margin:0.66%;" class="item"
+                               href="javascript:void(0);" rel="<?php echo $i; ?>">
+                                <img src="{{ asset('assets/img/frame',env('URL_SSL',true)) }}/frame<?php echo $i; ?>.png?3"
+                                     data-caption="">
+                            </a>
+                            <?php } ?>
+                        </div>
+                        <div class="col-10"></div>
+                    </div>
                     <figure class="box-mdf-img" id="preview-img">
+                        <div class="text-2 text-msg" style="margin-top:30px;">
+                            <div class="col-10"></div>
+                            <div class="col-80"><img class="img-text"
+                                                     src="{{ asset('assets/img/text-upload-header.png',env('URL_SSL',true)) }}"
+                                                     alt="">
+                            </div>
+                            <div class="col-10"></div>
+                        </div>
                         <div class="box-img-space" style="display: none;">
+
                             <div class="mdf-img">
                                 <div class="img-browse">
                                     <img id="image" src="" alt="">
                                 </div>
                                 <div class="img-finish"></div>
                             </div>
-                            <img class="img_w" src="{{ asset('assets/img/img_space2.png',env('URL_SSL',true)) }}" alt="">
+                            <img class="img_w" src="{{ asset('assets/img/img_space2.png',env('URL_SSL',true)) }}"
+                                 alt="">
                         </div>
+
                         <div class="box-btn box-btn-browse">
 						<span class="btn-browse btn-img-txt">
 							<input type="file" id="import_image" accept="image/x-png,image/jpeg"/>
-							<span class="img"><img src="{{ asset('assets/img/btn-new-upload.png',env('URL_SSL',true)) }}"
-                                                   alt=""></span>
+							<span class="img"><img
+                                        src="{{ asset('assets/img/btn-new-upload.png?new',env('URL_SSL',true)) }}"
+                                        alt=""></span>
 						</span>
                         </div>
                         <div class="btn-edit-img">
-                            <h3>ซูม</h3>
-                            <input class="input-slider" type="range" id="zoom" min='0' max='2' step='0.1'/>
+
+                            <div class="col-10">
+                                <img style="margin:19px auto 0;"
+                                     src="{{ asset('assets/img/icon-l.png',env('URL_SSL',true)) }}"
+                                     alt=""></div>
+                            <div class="col-80">
+                                <div class="box-slider">
+                                    <input class="input-slider" type="range" id="zoom" min='0' max='2' step='0.1'/>
+                                </div>
+                            </div>
+                            <div class="col-10">
+                                <img style="margin:19px auto 0"
+                                     src="{{ asset('assets/img/icon-p.png',env('URL_SSL',true)) }}"
+                                     alt="">
+                            </div>
+                            <div class="text-2 text-msg">
+                                <div class="col-10"></div>
+                                <div class="col-80">
+                                    <center><img src="{{ asset('assets/img/text-zoom.png',env('URL_SSL',true)) }}"
+                                                 alt=""></center>
+                                </div>
+                                <div class="col-10"></div>
+                            </div>
                         </div>
                     </figure>
                     <figure class="box-mdf-img">
                         <div class="text-2 text-msg">
                             <div class="col-10"></div>
-                            <div class="col-80"><img class="img-text" src="{{ asset('assets/img/text2.png',env('URL_SSL',true)) }}" alt="">
+                            <div class="col-80"><img class="img-text"
+                                                     src="{{ asset('assets/img/text2.png',env('URL_SSL',true)) }}"
+                                                     alt="">
                             </div>
                             <div class="col-10"></div>
                         </div>
@@ -39,32 +94,13 @@
                             <div class="col-10"></div>
                             <div class="col-80">
                                 <input maxlength="40" id="msgTxt" class="input-msg" type="text" value=""
-                                       name="input-msg">
+                                       name="input-msg" placeholder="(ไม่เกิน 40 ตัวอักษร)">
                             </div>
                             <div class="col-10"></div>
                         </div>
                     </figure>
-                    <div class="text-3 text-frame">
-                        <div class="col-10"></div>
-                        <div class="col-80"><img class="img-text" src="{{ asset('assets/img/text3.png',env('URL_SSL',true)) }}" alt="">
-                        </div>
-                        <div class="col-10"></div>
-                    </div>
-                    <div class="select-bike">
-                        <div class="carousel-left"><img src="{{ asset('assets/img/ico_prev-blue.png',env('URL_SSL',true)) }}"></div>
-                        <div class="carousel-right"><img src="{{ asset('assets/img/ico_next-blue.png',env('URL_SSL',true)) }}"></div>
-                        <div class="carousel-cont">
-                            <ul class="carousel">
-                                <?php for ($i = 1; $i <= 6; $i++) { ?>
-                                <li>
-                                    <a class="item" href="javascript:void(0);" rel="<?php echo $i; ?>">
-                                        <img src="{{ asset('assets/img/frame',env('URL_SSL',true)) }}/frame<?php echo $i; ?>.png" data-caption="">
-                                    </a>
-                                </li>
-                                <?php } ?>
-                            </ul>
-                        </div>
-                    </div>
+
+
                     <div class="btn-edit-img">
                         <div class="box-btn">
                             <button class="btnSty1" onclick="finish();"><span>เสร็จสิ้น</span></button>
@@ -75,7 +111,8 @@
                     <div class="box-header">
                         <div class="text-2">
                             <div class="col-10"></div>
-                            <div class="col-80"><img class="img-text" src="{{ asset('assets/img/result-header.png',env('URL_SSL',true)) }}"
+                            <div class="col-80"><img class="img-text"
+                                                     src="{{ asset('assets/img/result-header.png',env('URL_SSL',true)) }}"
                                                      alt=""></div>
                             <div class="col-10"></div>
                         </div>
@@ -93,20 +130,25 @@
                     </div>
                     <div class="box-btn btn-finish-img">
                         <a class="btn-share btn-img-txt btn-fb-share" href="#">
-                            <span class="img-share"><img src="{{ asset('assets/img/btn-share-fb.png',env('URL_SSL',true)) }}"
-                                                         alt=""></span>
+                            <span class="img-share"><img
+                                        src="{{ asset('assets/img/btn-share-fb.png',env('URL_SSL',true)) }}"
+                                        alt=""></span>
                         </a>
                         <a id="social-line-share" class="btn-share btn-img-txt btn-line-share" href="#">
                             <span class="img-share"><img
-                                        src="{{ asset('assets/img/btn-share-line.png',env('URL_SSL',true)) }}" alt=""></span>
+                                        src="{{ asset('assets/img/btn-share-line.png',env('URL_SSL',true)) }}"
+                                        alt=""></span>
                         </a>
                         <a class="btn-share btn-img-txt btn-fb-tw" href="#">
-                            <span class="img-share"><img src="{{ asset('assets/img/btn-share-tw.png',env('URL_SSL',true)) }}"
-                                                         alt=""></span>
-                        </a>
-                        <a  id="social-save" class="btn-share btn-img-txt btn-save" download="lovemomcard.gif" href="#" title="ImageName" onclick="Javascript:saveImage();">
                             <span class="img-share"><img
-                                        src="{{ asset('assets/img/btn-share-save.png',env('URL_SSL',true)) }}" alt=""></span>
+                                        src="{{ asset('assets/img/btn-share-tw.png',env('URL_SSL',true)) }}"
+                                        alt=""></span>
+                        </a>
+                        <a id="social-save" class="btn-share btn-img-txt btn-save" download="lovemomcard.gif" href="#"
+                           title="ImageName" onclick="Javascript:saveImage();">
+                            <span class="img-share"><img
+                                        src="{{ asset('assets/img/btn-share-save.png',env('URL_SSL',true)) }}"
+                                        alt=""></span>
                         </a>
                     </div>
                     <div class="btn-group">
@@ -126,30 +168,32 @@
 @section('javascript')
 @section('javascript-content')
     <script>
-        window.mobileAndTabletcheck = function() {
+        window.mobileAndTabletcheck = function () {
             var check = false;
-            (function(a){if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino|android|ipad|playbook|silk/i.test(a)||/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0,4))) check = true;})(navigator.userAgent||navigator.vendor||window.opera);
+            (function (a) {
+                if (/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino|android|ipad|playbook|silk/i.test(a) || /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0, 4))) check = true;
+            })(navigator.userAgent || navigator.vendor || window.opera);
             return check;
         };
         var image = new Object();
         image.el = $('#image');
         image.crop;
-        image.width = 480;
+        image.width = 600;
         image.size = 600;
         image.style_index = 1;
         if ($(window).width() < 420) {
             var size_frame = "85";
-        }else if($(window).width() < 760 && $(window).width() >= 420){
+        } else if ($(window).width() < 760 && $(window).width() >= 420) {
             var size_frame = "117";
-        }else{
+        } else {
             var size_frame = "215";
         }
         slidebox({
-            container : ".carousel-cont",
-            leftTrigger : ".carousel-left",
-            rightTrigger : ".carousel-right",
-            speed : "fast",
-            length : size_frame
+            container: ".carousel-cont",
+            leftTrigger: ".carousel-left",
+            rightTrigger: ".carousel-right",
+            speed: "fast",
+            length: size_frame
         });
 
         $(document).ready(function () {
@@ -173,7 +217,7 @@
                 readFile(this);
             });
 
-            if(window.mobileAndTabletcheck() == false){
+            if (window.mobileAndTabletcheck() == false) {
                 $('#social-line-share').hide();
             }
 
@@ -187,6 +231,17 @@
                 image.style_path = $(this).html();
                 $('.select-bike .item').removeClass('active');
                 $(this).addClass('active');
+
+
+                $('.img-browse').removeClass('sty-1');
+                $('.img-browse').removeClass('sty-2');
+                $('.img-browse').removeClass('sty-3');
+                $('.img-browse').removeClass('sty-4');
+                $('.img-browse').removeClass('sty-5');
+                $('.img-browse').removeClass('sty-6');
+                $('.img-browse').addClass('sty-' + image.style_index);
+
+
             });
             step_init();
         }
@@ -239,7 +294,7 @@
                 cropBoxResizable: false,
                 toggleDragModeOnDblclick: false,
                 ready: function () {
-                    image.el.cropper("setCropBoxData", {left: 0, top: 0, width: 480, height: 480});
+                    image.el.cropper("setCropBoxData", {left: 0, top: 0, width: 600, height: 600});
                     $('.cropper-drag-box').addClass('sty-' + image.style_index);
                 }
             });
@@ -250,7 +305,7 @@
             uploadFile(canvas_crop_data);
         }
         function uploadFile(dataURL) {
-            ga('send','event','Select','Frame '+image.style_index);
+            ga('send', 'event', 'Select', 'Frame ' + image.style_index);
             popup_loading();
             var task = image.style_index;
             var token = "{{ csrf_token() }}";
@@ -290,7 +345,7 @@
                 reader.onload = function (e) {
                     $('.section-select-browse .box-mdf-img .img').hide();
                     $('.section-select-browse .box-mdf-img .img-browse').addClass('show');
-                    //$('.img-browse').addClass('sty-'+image.style_index);
+                    $('.img-browse').addClass('sty-' + image.style_index);
                     $('#image').attr('src', e.target.result);
                     $('.box-img-space').show();
                     step_3();
@@ -303,31 +358,32 @@
         }
 
         function shareImage(b) {
-            ga('send','event','Share','Facebook');
-            var url = encodeURI('<?php echo env('URL_PD','https://www.bbnetworkgroup.com')?>/share/'+b);
+            ga('send', 'event', 'Share', 'Facebook');
+            var url = encodeURI('<?php echo env('URL_PD', 'https://www.bbnetworkgroup.com')?>/share/' + b);
             FB.ui({
                 method: 'share',
                 href: url,
                 hashtag: '#LoveYouMom',
                 mobile_iframe: false,
-            }, function(response){});
+            }, function (response) {
+            });
         }
 
         function sharetw(b) {
-            ga('send','event','Share','Twitter');
-            var path_img = '<?php echo env('URL_PD','https://www.bbnetworkgroup.com')?>/share/'+b;
-            var url = 'https://twitter.com/share?url='+encodeURIComponent(path_img)+'&text='+encodeURIComponent('การ์ดสุดพิเศษนี้แด่แม่')+'&hashtags=LoveYouMom';
-            window.open(url,'_blank');
+            ga('send', 'event', 'Share', 'Twitter');
+            var path_img = '<?php echo env('URL_PD', 'https://www.bbnetworkgroup.com')?>/share/' + b;
+            var url = 'https://twitter.com/share?url=' + encodeURIComponent(path_img) + '&text=' + encodeURIComponent('การ์ดสุดพิเศษนี้แด่แม่') + '&hashtags=LoveYouMom';
+            window.open(url, '_blank');
         }
 
-        function shareLine(b){
-            ga('send','event','Share','Line');
-            var url = encodeURI('line://msg/text/การ์ดสุดพิเศษนี้แด่แม่ <?php echo env('URL_PD','https://www.bbnetworkgroup.com')?>/share/'+b);
+        function shareLine(b) {
+            ga('send', 'event', 'Share', 'Line');
+            var url = encodeURI('line://msg/text/การ์ดสุดพิเศษนี้แด่แม่ <?php echo env('URL_PD', 'https://www.bbnetworkgroup.com')?>/share/' + b);
             window.open(url);
         }
 
-        function saveImage(){
-            ga('send','event','Save','Image');
+        function saveImage() {
+            ga('send', 'event', 'Save', 'Image');
 //            window.open(canvas.toDataURL('image/gif'));
 //            var gh = canvas.toDataURL('gif');
 //

@@ -1,6 +1,6 @@
 <header class="main-header">
     <div class="container">
-        <a class="logo" href="{{url('')}}"><img src="{{ asset('assets/img/logo.png',env('URL_SSL',true)) }}" alt="Nestle"></a>
+        <a class="logo" href="{{url('')}}"><img src="{{ asset('assets/img/logo.png?t',env('URL_SSL',true)) }}" alt="Nestle"></a>
         <a class="btn-menu" href="javascript:void(0);">
             <span class="normal"></span>
             <span class="active"></span>
