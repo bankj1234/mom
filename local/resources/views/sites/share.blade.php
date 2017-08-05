@@ -9,7 +9,7 @@
     <meta name="keywords" content="nestle,LoveYouMom,LoveMomCard,บอกรักคุณแม่ได้ทุกวัน">
     <meta name="author" content="SPK">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1">
-    <meta property="fb:app_id" content="141315993114757">
+    <meta property="fb:app_id" content="1468128819961218">
     <meta property="og:image" content="{{ asset('/assets/uploads',env('URL_SSL',true)) }}/{{$id}}/mom.gif">
     <meta property="og:image:width" content="600">
     <meta property="og:image:height" content="600">
@@ -45,28 +45,17 @@
     <div class="hero-text">
         <img src="{{ asset('/assets/uploads',env('URL_SSL',true)) }}/{{$id}}/mom.gif" alt="">
     </div>
+    <div class="btn-group">
+        <div class="again-btn">
+            <a class="btn-play-new" href="https://www.bbnetworkgroup.com"></a>
+        </div>
+    </div>
 </div>
 
 <footer class="main-footer">
     <a href="https://www.nestle.co.th/th/info/yourdata" target="_blank" class="twitterbird" rel="noopener noreferrer">
     </a>
 </footer>
-<div style="display:none;">
-    <!-- popup loading-->
-    <div class="popup-loading" id="popup-loading">
-        <div class="popup-inner">
-            <div class="box-loading">
-                <span class="txt">ระบบกำลังทำงาน กรุณารอสักครู่</span>
-                <div id="circleG">
-                    <div id="circleG_1" class="circleG"></div>
-                    <div id="circleG_2" class="circleG"></div>
-                    <div id="circleG_3" class="circleG"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- end popup loading -->
-</div>
 </div>
 <script src="{{ asset('assets/js/main.min.js',env('URL_SSL',true)) }}"></script>
 
