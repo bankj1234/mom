@@ -8,7 +8,7 @@ use PhlongTaIam\WordBreaker as WordBreaker;
 class SiteController extends Controller
 {
     var $word2 = '';
-    var $BaseURL = 'https://www.bbnetworkgroup.com';
+    var $BaseURL = 'https://www.lovemomcard.in.th';
 
     public function __construct()
     {

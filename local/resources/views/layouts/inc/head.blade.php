@@ -30,7 +30,7 @@
 <script>
     window.fbAsyncInit = function() {
         FB.init({
-            appId      : '141315993114757',
+            appId      : '1468128819961218',
             xfbml      : true,
             version    : 'v2.9'
         });
@@ -57,7 +57,7 @@
         m.parentNode.insertBefore(a, m)
     })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-    ga('create', 'UA-xxxxxxxxx-xx', 'auto');
+    ga('create', 'UA-33354168-14', 'auto');
     ga('send', 'pageview');
 </script>
 <div class="main-container">

@@ -47,7 +47,7 @@
     </div>
     <div class="btn-group">
         <div class="again-btn">
-            <a class="btn-play-new" href="https://www.bbnetworkgroup.com"></a>
+            <a class="btn-play-new" href="https://www.lovemomcard.in.th"></a>
         </div>
     </div>
 </div>
