@@ -23,12 +23,13 @@ class SiteController extends Controller
         if(env('APP_ENV' )){
             return view('sites/index');
         }else{
-            if ($request->server('HTTP_X_FORWARDED_PROTO') == 'http') {
-                return redirect($this->BaseURL);
-            }else{
+            if ($request->server('HTTP_CONNECTION') == 'upgrade') {
                 return view('sites/index');
+            }else{
+                return redirect('https://www.lovemomcard.in.th');
             }
         }
+
     }
 
     public function activity()

@@ -196,7 +196,6 @@
             speed: "fast",
             length: size_frame
         });
-
         $(document).ready(function () {
             fn_modifin_init();
             $('.btn-step-select').click(function (e) {
@@ -205,7 +204,7 @@
                 e.preventDefault();
             })
 
-            $('#zoom').on('propertychange input', function (event) {
+            $('#zoom').on('change input', function (event) {
                 image.el.cropper('zoomTo', $(this).val());
             });
             image.el.on('zoom', function (e) {
