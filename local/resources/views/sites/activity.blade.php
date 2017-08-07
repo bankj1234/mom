@@ -9,7 +9,7 @@
                     <div class="text-3 text-frame">
                         <div class="col-10"></div>
                         <div class="col-80"><img class="img-text"
-                                                 src="{{ asset('assets/img/text3.png',env('URL_SSL',true)) }}" alt="">
+                                                 src="{{ asset('assets/img/text3.png?v2',env('URL_SSL',true)) }}" alt="">
                         </div>
                         <div class="col-10"></div>
                     </div>
