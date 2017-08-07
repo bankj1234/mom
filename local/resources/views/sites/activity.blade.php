@@ -205,7 +205,7 @@
                 e.preventDefault();
             })
 
-            $('#zoom').on('input', function (event) {
+            $('#zoom').on('propertychange input', function (event) {
                 image.el.cropper('zoomTo', $(this).val());
             });
             image.el.on('zoom', function (e) {
