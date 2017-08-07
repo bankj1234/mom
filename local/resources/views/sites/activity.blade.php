@@ -56,25 +56,26 @@
 						</span>
                         </div>
                         <div class="btn-edit-img">
-
-                            <div class="col-10">
-                                <img style="margin:19px auto 0;"
-                                     src="{{ asset('assets/img/icon-l.png',env('URL_SSL',true)) }}"
-                                     alt=""></div>
-                            <div class="col-80">
-                                <div class="box-slider">
-                                    <input class="input-slider" type="range" id="zoom" min='0' max='2' step='0.1'/>
+                            <div id="box-zoombar">
+                                <div class="col-10" style="width:5%">
+                                    <img class="icon-p"
+                                         src="{{ asset('assets/img/icon-l.png',env('URL_SSL',true)) }}"
+                                         alt=""></div>
+                                <div class="col-80" id="slid-inner">
+                                    <div class="box-slider">
+                                        <input class="input-slider" type="range" id="zoom" min='0' max='2' step='0.1'/>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-10">
-                                <img style="margin:19px auto 0"
-                                     src="{{ asset('assets/img/icon-p.png',env('URL_SSL',true)) }}"
-                                     alt="">
+                                <div class="col-10" style="width:5%">
+                                    <img class="icon-l"
+                                         src="{{ asset('assets/img/icon-p.png',env('URL_SSL',true)) }}"
+                                         alt="">
+                                </div>
                             </div>
                             <div class="text-2 text-msg">
                                 <div class="col-10"></div>
                                 <div class="col-80">
-                                    <center><img src="{{ asset('assets/img/text-zoom.png',env('URL_SSL',true)) }}"
+                                    <center><img id="text-custom" src="{{ asset('assets/img/text-zoom.png?2',env('URL_SSL',true)) }}"
                                                  alt=""></center>
                                 </div>
                                 <div class="col-10"></div>
@@ -82,7 +83,7 @@
                         </div>
                     </figure>
                     <figure class="box-mdf-img">
-                        <div class="text-2 text-msg">
+                        <div class="text-2 text-msg" style="margin-bottom: 0px;">
                             <div class="col-10"></div>
                             <div class="col-80"><img class="img-text"
                                                      src="{{ asset('assets/img/text2.png',env('URL_SSL',true)) }}"
@@ -296,6 +297,10 @@
                 ready: function () {
                     image.el.cropper("setCropBoxData", {left: 0, top: 0, width: 600, height: 600});
                     $('.cropper-drag-box').addClass('sty-' + image.style_index);
+                    if (window.mobileAndTabletcheck() == true) {
+                        $('#box-zoombar').hide();
+                        $('#text-custom').attr("src","{{ asset('assets/img/text_resize_mobile.png',env('URL_SSL',true)) }}");
+                    }
                 }
             });
         }

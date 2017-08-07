@@ -1097,8 +1097,8 @@ figure {
     display: none;
     /*max-width: 500px;*/
     width:80%;
-    margin: 15px auto;
-    height: 100px;
+    margin: 15px auto 0px;
+    height: auto;
 }
 
 .btn-edit-img .input-slider {
@@ -1705,4 +1705,34 @@ input[type=range]:focus::-ms-fill-lower {
 }
 input[type=range]:focus::-ms-fill-upper {
     background: #6dd0f4;
+}
+
+.icon-p{
+    margin:23px auto 0;
+}
+.icon-l{
+    margin:23px auto 0;
+}
+@media only screen and (max-width: 767px) {
+    .icon-p{
+        margin:26px auto 0;
+    }
+    .icon-l{
+        margin:26px auto 0;
+    }
+}
+
+@media only screen and (max-width: 420px) {
+    .icon-p{
+        margin:31px auto 0;
+    }
+    .icon-l{
+        margin:31px auto 0;
+    }
+}
+
+#slid-inner{
+    width: 80%;
+    margin-left: 5%;
+    margin-right: 5%;
 }
