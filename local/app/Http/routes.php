@@ -21,8 +21,6 @@ Route::get('share/{id}', function ($id) {
     $data['id'] = $id;
     return view('sites/share',$data);
 });
-Route::get('home', 'HomeController@index');
-
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
